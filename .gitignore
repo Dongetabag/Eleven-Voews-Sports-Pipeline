@@ -22,3 +22,4 @@ recipe-labs-leadgen.zip
 
 # OS clutter
 .DS_Store
+.vercel
