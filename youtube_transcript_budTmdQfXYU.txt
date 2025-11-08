@@ -1,0 +1,1403 @@
+YouTube Transcript for Video ID: budTmdQfXYU
+Video URL: https://www.youtube.com/watch?v=budTmdQfXYU&t=76s
+================================================================================
+
+[00:00] Babe, Netflix is broken. I'm seriously
+[00:03] so mad.
+[00:03] >> Fix my game. Chuck never
+[00:06] the toilet again, man. I really need
+[00:09] this thing to flush.
+[00:11] >> I would normally stress about this, but
+[00:13] N manages my home lab.
+[00:20] >> Yay, it works.
+[00:23] >> Did you just see that? My new AI
+[00:25] employee, Terry, fixed everything before
+[00:27] I could even start trouble.
+[00:32] No, Terry. No, don't optimize. Quit.
+[00:34] Cancel. Cancel. Terry. No. Okay. So,
+[00:37] that right there, that's Terminator
+[00:38] Terry, and we're going to avoid that at
+[00:40] all cost. So, in this video, we're going
+[00:42] to build your very own super intelligent
+[00:44] AI agent, aka your new IT employee. It
+[00:48] can monitor, it can troubleshoot, and
+[00:49] even with your explicit permission, fix
+[00:51] things in your network and home lab. Get
+[00:53] your stinky coffee ready. Let's try and
+[00:56] avoid Skynet.
+[00:58] In part one, we built Baby Terry with
+[01:00] N8. He was okay. He could monitor your
+[01:03] websites, but he definitely could not
+[01:04] troubleshoot your home lab at 3:00 a.m.
+[01:07] Let's change that. Welcome to employee
+[01:09] onboarding. First day, fresh pot of
+[01:11] coffee. We're going to give our AI agent
+[01:13] access to real tools. The ability to
+[01:15] actually connect to things in our home
+[01:16] lab and network so it can monitor,
+[01:18] troubleshoot, and yes, even fix stuff.
+[01:20] Now, talking UniFi, Proxmbox, Plex, your
+[01:22] NAS. If it has a CLI or API, Terry can
+[01:25] handle it. But hold on. We're going to
+[01:26] treat Terry like a new hire. You don't
+[01:28] give the new guy root access in the
+[01:30] first day. You got to build that trust.
+[01:32] It won't be long. Give him a few cups of
+[01:34] coffee and he'll be unstoppable.
+[01:36] Unstoppable.
+[01:38] Anyway,
+[01:42] now before Terry gets to work, we got to
+[01:44] set him up properly. And even though
+[01:45] he's an AI agent powered by N8N, he
+[01:47] still needs a home. He needs a desk. You
+[01:49] got two options for this. Think
+[01:50] carefully. Option one, you can put him
+[01:52] in your home lab. Terry's in the house.
+[01:54] I show you how to do that right here.
+[01:55] But the downside is that if your home
+[01:57] lab goes down, so does Terry. That's why
+[01:59] I like the option of putting Terry in
+[02:01] the cloud. A self-hosted NAN instance on
+[02:04] the hosting your cloud. I love this
+[02:05] option for two reasons. First, Terry's
+[02:07] immune to my tinkering. Two, this is so
+[02:09] crazy easy to set up. Wait, hold on. You
+[02:11] don't have an N instance. Let's fix that
+[02:14] right now. By the time I'm done sipping
+[02:16] this cup of coffee, just taking one sip,
+[02:18] you're going to have one. Ready, set,
+[02:21] go. All right. First, head out to
+[02:22] hostinger.com/ncn
+[02:25] or check the link in the description.
+[02:26] Choose your plan. KVM2 is perfect. Look
+[02:29] at those muscles. Yes, I am purposely
+[02:31] moving in slow motion right now for this
+[02:33] bit. Enter coupon code network chuck and
+[02:35] magic happens. Continue. Enter your
+[02:38] stuff. Yes, this is pretty dumb, but
+[02:41] you're still here. Create a root
+[02:42] password. Say yes to a free malware
+[02:44] scanner. Take a quick coffee break while
+[02:46] I'm sipping mine. Click on manage VPS.
+[02:49] and then click on manage app and finish
+[02:51] your setup. And then you're good to go.
+[02:54] Done. And thank you to Hostinger for
+[02:55] making this video possible. Terry now
+[02:57] has his desk in the cloud. Now the
+[02:59] hacker move is to have Terry use Twin
+[03:00] Gate to securely connect back to your
+[03:02] network at your house or your business.
+[03:04] This way Terry can reach your home lab
+[03:06] securely 24/7. And he's up even when
+[03:08] your home lab isn't. I'll show you what
+[03:10] that looks like later. Okay, day one.
+[03:11] Terry's going to learn how to monitor
+[03:13] and troubleshoot. It's a big day for
+[03:15] Terry. I'm excited. Here we are in 8.
+[03:17] Let's create a new workflow right up
+[03:18] here at the top. And then we'll add our
+[03:20] first step. We'll make that a manual
+[03:22] trigger. And then we'll add one more
+[03:23] node, our AI agent. AI and AI agent.
+[03:27] Don't do anything just yet. Click out of
+[03:28] there. And here is our starting point.
+[03:31] Man, Terry's going to be so smart.
+[03:32] Actually, let's make him smart. Let's
+[03:34] give him a chat model and AI model. I'm
+[03:36] going to choose chat GBT. You have a lot
+[03:38] of options for this. For more info on
+[03:39] how to set this up, I got it all covered
+[03:41] in my first video. I'm going chat GBT
+[03:43] with the 4.1 mini model. It's very fast.
+[03:46] And then for memory so he doesn't forget
+[03:47] what we're talking about. We'll add some
+[03:48] simple memory right there.
+[03:51] Perfect. Now to teach Terry, we're going
+[03:53] to give him a few simple tasks. First,
+[03:55] make sure this website is up. That's it.
+[03:57] What website? We're going to make one
+[03:59] real quick. Just a test one so we can
+[04:01] walk through it together. We're going to
+[04:02] throw this website inside a Docker
+[04:04] container on the same N host we're
+[04:07] working on right now. If you have no
+[04:08] idea what I'm talking about, that's
+[04:09] totally cool. I'm going to walk you
+[04:10] through it right now. Now, if you
+[04:11] followed along with me on Hostinger,
+[04:13] we're going to go back to our VPS panel,
+[04:15] and you'll see a button for browser
+[04:16] terminal right here at the top right. Go
+[04:18] ahead and click on that. If you're
+[04:19] hosting somewhere else, what you want to
+[04:20] do is get CLI access to the server
+[04:22] that's running your NAN instance. And
+[04:24] here we are, Home Sweet Home, the
+[04:26] terminal, my favorite place to be. And
+[04:27] we're going to run two commands. First,
+[04:29] we'll copy and paste this. I'm going to
+[04:30] have all the commands below. This will
+[04:31] run a simple website on port 8090.
+[04:34] Ready, set, go. Then, we'll run this
+[04:36] docker exec command. We're just adding a
+[04:38] nice H1 header to our website. Hit enter
+[04:41] and we'll do a docker restart website.
+[04:44] That's the name of our container by the
+[04:45] way. And now it should be ready. Let's
+[04:47] test it out real quick. I'm going to
+[04:49] grab the IP address of my server. Open
+[04:52] up a new tab, paste that in, and type in
+[04:54] colon port 8090.
+[04:57] Perfect. We have a website. Now, hold on
+[04:59] one second. I want you to stop and
+[05:00] think. How did you make sure that
+[05:02] website was up? What did you do? You're
+[05:04] like, Chuck, all I did was take the URL,
+[05:06] open up a new tab, and made sure it
+[05:09] looks good. That's what we're going to
+[05:10] do with Terry. We're going to teach him
+[05:12] to do that. And that's going to be a
+[05:14] common thread throughout this video.
+[05:15] You're going to think about how you
+[05:16] would monitor something, how you would
+[05:17] troubleshoot something, how you would
+[05:18] even fix something, and then show Terry
+[05:21] the same process. I'm telling you, this
+[05:23] stuff is crazy. And it feels kind of
+[05:25] like we're training another human, but
+[05:28] it's AI. It's weird. Anyways, just got
+[05:31] to stuff those thoughts down. Can't
+[05:33] dwell on that. Now, for Terry to visit a
+[05:35] website, we got to give him a tool right
+[05:37] here. So, we're going to add a tool to
+[05:38] his tool belt. This will be the HTTP
+[05:41] request tool right here. It'll pop open
+[05:43] for us. And we're going to change a few
+[05:45] parameters. First, I'll just rename it.
+[05:46] I'm going to call it website tool. And
+[05:49] then here in the description, I'll just
+[05:50] say what he's supposed to use it for.
+[05:52] Use this tool to see if the website is
+[05:56] up. And we'll paste in our URL right
+[05:58] here. Let's do a little test to make
+[06:00] sure it works. Execute step. And there
+[06:02] we go. It returns the data that we saw.
+[06:04] So, Terry has a tool. Let's tell him how
+[06:06] to use it. Let's tell him who he is.
+[06:07] Actually, let's open up Terry and we're
+[06:09] going to give Terry an identity so he
+[06:11] doesn't have a crisis. We're going to
+[06:12] click on add option and then system
+[06:15] message. This is also referred to as his
+[06:17] system prompt. I'm going to paste in
+[06:18] this. Again, I'll have all this below.
+[06:20] Essentially, I'm telling Terry who he
+[06:21] is. He's an IT administrator. He has one
+[06:23] job. Make sure the website is up. And
+[06:24] I'm telling him how to use the tool and
+[06:26] how to report back to me if the website
+[06:28] is up or down. That's it. Let's try it
+[06:30] out. So, I'm going to open this chat
+[06:31] message here. By default, the AI agent's
+[06:33] going to have a chat message or a chat
+[06:34] box attached to it. That's how he's
+[06:36] triggered. And I'll say, "Hey, Terry, is
+[06:38] the website up?" And watch what happens
+[06:41] here. He's going to think about it. He's
+[06:43] going to use his tool. You saw that. And
+[06:45] he's done. And there's our message. The
+[06:47] website is indeed up. And he did what we
+[06:49] would do. He visited the website. Now,
+[06:53] let's make it go down. Let's see what
+[06:54] happens. We'll go over here to our
+[06:55] terminal, and I'll say docker stop
+[06:58] website.
+[06:59] If I type in docker ps, I'll be able to
+[07:01] see that my server is not running
+[07:03] because right now we only have n running
+[07:04] in our tray fit container. Those are
+[07:06] supposed to be running. Don't touch
+[07:07] those. Terry can't fix that yet. Now,
+[07:10] let's run Terry. I'm going to reset my
+[07:12] chat session and say the same message.
+[07:14] Hey, Terry, is the website up?
+[07:19] And it's down. Okay, cool. But why is it
+[07:21] down? What would you do to troubleshoot
+[07:23] this? Well, we know that it's a Docker
+[07:25] container running on this server. We go
+[07:27] over here and start doing things like, I
+[07:29] don't know, Docker or PS to see if it's
+[07:31] running. Let's show Terry how to do
+[07:32] that. Let's teach our new employee how
+[07:34] to log into a server and check if a
+[07:35] Docker container is running. For that,
+[07:37] we're going to need a new tool, the SSH
+[07:39] tool, giving our AI agent the ability to
+[07:41] log into servers via CLI. That is so
+[07:44] stinking powerful. Coffee break.
+[07:49] Oh, also don't forget to save every once
+[07:50] in a while. You don't want to lose your
+[07:51] work. Now, there's one annoying thing
+[07:53] here, though. If I click on add tool and
+[07:55] I'll go over here to search, there's no
+[07:57] SSH tool. I got a workar around, don't
+[07:59] worry. Instead of adding a tool, we're
+[08:01] going to add a new node. So, hit that
+[08:02] plus sign at the top right here. Search
+[08:04] for SSH. Notice there is an SSH node.
+[08:07] Click on that and we'll choose the
+[08:08] execute a command option. Now,
+[08:11] immediately we're thrust into the SSH
+[08:12] node configuration. Let's go ahead and
+[08:14] make this happen right now. Let's
+[08:15] configure it. I'll select my credential,
+[08:16] which we're not going to have one yet.
+[08:17] Let's click on create new credential
+[08:19] here. All you're going to do is put in
+[08:20] the credentials for your server. And for
+[08:22] our situation right now, it's going to
+[08:23] be the host server where NAN lives. I'm
+[08:25] going to give it the external IP address
+[08:27] here as the host, taking away all the
+[08:29] HTTP and bracket stuff. Port 22 is good.
+[08:32] Username will be root and then password
+[08:34] is one I set when I set up Hostinger.
+[08:36] Click on save. It'll test the
+[08:38] connection. Good to go. And then we have
+[08:40] our command field. Let's test it out
+[08:42] real quick. We'll do a simple command
+[08:43] like host name. Click on execute this
+[08:45] step. And cool, it works. Host name is
+[08:48] this guy right here. I'm going to remove
+[08:50] the host name because we're not quite
+[08:51] done because right now our AI agent has
+[08:53] no way to use this node. It needs to be
+[08:55] a tool, but right now it's just a
+[08:57] standalone node. Let's change that. If I
+[08:59] hover over this SSH node, I'll see some
+[09:01] dots right here. I'm going to click
+[09:02] those and I'll choose the option convert
+[09:04] node to subworkflow. Watch what happens.
+[09:08] Boom. Nothing crazy. It's like rename
+[09:10] this please. We're going to call this
+[09:12] SSH_N
+[09:14] server. Confirm. That's it. Now, what
+[09:17] did that just do? It's like you put on a
+[09:19] new suit, some new clothes. It actually
+[09:20] converted this SSH node into its own
+[09:23] workflow. So, let's actually save this
+[09:25] workflow. Go back to personal over here
+[09:26] on the left. We now have two workflows.
+[09:28] The one we were working on and the one
+[09:30] we just created with the SSH node. Let's
+[09:32] jump in there. Ah, look at that. Now,
+[09:34] while we're here, we're going to do a
+[09:35] couple things. First, we'll connect the
+[09:37] start node to our SSH node. Then, we're
+[09:40] going to edit this start node. Just
+[09:41] double click that real quick. And we'll
+[09:43] change the input data mode from accept
+[09:45] all data to define using fields below.
+[09:47] And then we'll click on add field. For
+[09:49] name, we're going to type in command.
+[09:51] The type will be string. And then click
+[09:53] on execute step. Right now, it's going
+[09:54] to be nothing null. That's fine though.
+[09:57] Click out of that. And then go to your
+[09:59] SSH node right here. Double click that.
+[10:01] And we're going to do one thing. Notice
+[10:03] here on the left, we have our start node
+[10:04] as input. And then that command string
+[10:07] that we created. We're going to drag
+[10:09] that over right to the command field.
+[10:14] Perfect. Now, what did we just do? What
+[10:16] is all that? What we did is made it
+[10:18] possible for Terry to use this workflow
+[10:20] and he's going to fill in that command
+[10:22] variable we made with whatever command
+[10:24] he wants. So let's say he wants to say
+[10:26] host name. That is what's going to be
+[10:28] fed to this execute a command SSH node.
+[10:30] Let's test it out. We're going to save
+[10:32] this workflow. Go back to our original
+[10:33] workflow. And first let's remove this uh
+[10:36] sub workflow right here. It's not going
+[10:38] to delete it. It's just going to remove
+[10:39] it from our current workflow. And then
+[10:41] we'll add a tool for Terry. And the tool
+[10:43] we're going to use is call nan workflow
+[10:45] tool. And then down here at the bottom,
+[10:46] we'll have our workflow and we have a
+[10:48] choose option or a choose drop-own box.
+[10:50] We're going to click on choose and
+[10:51] choose our SSH nan server, the one we
+[10:54] just created. And notice we're
+[10:55] immediately given the option to say
+[10:56] which command do you want to run. Well,
+[10:58] getting back to our example, we want
+[10:59] Terry to see if that Docker container is
+[11:01] running the same way we would check. So,
+[11:04] let's have him run docker ps. That's our
+[11:06] command. And then also one more thing,
+[11:07] I'm going to change the name of this
+[11:09] tool to docker tool so Terry knows what
+[11:12] to use. Done. Just going to move things
+[11:15] around. and make it clean. And now let's
+[11:16] tell Terry how to use the tool. Again,
+[11:18] I'll have all these prompts below. We're
+[11:20] going to double click on Terry and we're
+[11:21] going to copy and paste this in. Now,
+[11:23] pretty much the same story as before.
+[11:24] We're telling Terry he can use the
+[11:26] website tool to check if the website is
+[11:27] up. He's actually looking at the website
+[11:28] for network chuck coffee header. But
+[11:30] then we're saying, "Hey, the website is
+[11:32] down. See if the container is up."
+[11:33] That's it. Let's get out of there and
+[11:35] save. And then let's see if Terry can
+[11:37] check it out for us. Hey, Terry. Is the
+[11:40] website up?
+[11:43] Watch Terry go checks the website uses
+[11:45] our Docker tool. Ah, look at that. So
+[11:48] he's like, "Yeah, the website is down."
+[11:50] Additionally, the container is not
+[11:52] running in the list. Now, think about
+[11:53] what we just did here. We taught Terry
+[11:55] how to troubleshoot like us. And yes,
+[11:58] this was simple, but we're just
+[12:00] scratching the surface. Now, I don't
+[12:01] know about you, but I'm starting to
+[12:02] trust Terry a bit more. Let's give him
+[12:04] some more power. So far, we have him
+[12:06] pretty locked down to the one command he
+[12:09] can run. That's docker ps. What do you
+[12:10] say we let him choose? Watch this. I can
+[12:13] jump back into that SSH tool or the nan
+[12:16] workflow call tool. And here where it
+[12:18] says command docker ps. Let's not
+[12:20] specify a command. Let's take that away
+[12:23] and click this magic fairy dust button
+[12:25] here. That will say let the agent decide
+[12:29] what to set that variable to. Or in
+[12:31] other words, let the agent decide what
+[12:33] the command he'll run will be. I know. I
+[12:36] know it's a bit more trust. I feel like
+[12:37] I'm there. Now, let's tell Terry about
+[12:39] our new trust in him. Let's change his
+[12:41] prompt. And we're going to add a few
+[12:43] more troubleshooting steps. Again,
+[12:45] website down. Run docker ps, but also
+[12:47] now maybe run a docker inspect command
+[12:49] to see why the container is down. Maybe
+[12:52] look at the docker logs and see if
+[12:54] there's anything weird. I mean, that's
+[12:55] what you and I would do. Right now,
+[12:56] we're teaching Terry. Let's try it out.
+[12:58] Let's save, reset our chat session, and
+[13:01] ask him one more time, "Hey, Terry, is
+[13:03] the website up?" And watch this magic
+[13:06] happen.
+[13:08] And it's done. Notice a couple things
+[13:10] real quick. He used the Docker tool
+[13:12] twice for two commands. Let's see what
+[13:14] he came up with. Websites down. He found
+[13:16] the exit code for the container at zero.
+[13:18] And let's see what commands he ran. So
+[13:20] let's go to our logs down here. Click on
+[13:22] Docker logs. He ran See, he ran Docker
+[13:26] PS and then he ran Docker inspect, but
+[13:28] he didn't run the logs. Did we tell him
+[13:30] to? I thought we told him to. Let's be
+[13:33] more specific. Always check logs.
+[13:38] Let's try it again.
+[13:41] Ah, he ran it three times. Good boy,
+[13:43] Terry. See, he's learning. We're
+[13:44] teaching him well. Recent logs, graceful
+[13:46] shutdown, and exit messages. Terry, I'm
+[13:49] so proud of you. Employee of the
+[13:50] stinking month.
+[13:52] So dumb. But here is where Terry can
+[13:54] become more powerful. He can do what a
+[13:56] human can do. Troubleshoot like a human.
+[13:58] But he can do it constantly. This next
+[14:01] part is pretty crazy.
+[14:05] Now, we're kind of promoting Terry to a
+[14:07] level two engineer here. We're going to
+[14:08] give him two things that'll make him
+[14:10] overpowered. One of those things is
+[14:11] fixing things.
+[14:14] Here we go. Now, first, this is kind of
+[14:17] an annoying thing. Like, I hate this. I
+[14:19] don't want to have to ask Terry to check
+[14:21] if my website's up. Come on, Terry. Do
+[14:23] your job. I want you to check all the
+[14:26] time. Let's make that happen right now.
+[14:28] To do that, it's simple. We have a new
+[14:30] trigger. Right now, we have a manual
+[14:32] trigger. We have a chat trigger. Let's
+[14:34] add a schedule trigger. Go up here,
+[14:36] click on the plus sign, click on add
+[14:38] another trigger, and then we got where
+[14:40] did it go? On a schedule. Boom. Now,
+[14:42] Terry, I own you, buddy. You're on the
+[14:44] clock 24/7. I want you every five
+[14:48] minutes checking my website. Let's make
+[14:51] some room for him. We'll connect this
+[14:52] trigger to Terry. Can I change the way
+[14:54] Terry looks? No. They should really add
+[14:57] that to NAN. That would really just be
+[14:58] the extra oomph to really juzj it up,
+[15:02] you know, stupid.
+[15:05] Now, doing this is actually going to
+[15:06] break a few things. So, watch. I'm going
+[15:09] to execute my trigger. Excute workflow.
+[15:11] Boom. And it's like, whoa, what are you
+[15:14] talking about? You can't do this.
+[15:15] Terry's brain is fried. Let's fix that.
+[15:18] There are two things blowing him up
+[15:19] here. First, he's expecting a chat
+[15:21] message telling him what to do. That
+[15:23] initial, "Hey, Terry, check if the
+[15:24] website is up." It's not happening right
+[15:26] here with the schedule trigger. we have
+[15:27] to make it happen artificially. Let's do
+[15:30] that. So, right here in between schedule
+[15:32] trigger and Terry, click on that plus
+[15:34] icon and we're going to add a set field
+[15:37] node or edit fields. It's going to pop
+[15:39] open for us. We're going to add two
+[15:41] fields first. First will be the prompt.
+[15:43] We'll name it prompt and the value will
+[15:45] be whatever we want Terry to do. This is
+[15:47] his user message. I'll simply say check
+[15:50] if the website is up and then we'll add
+[15:52] one more field. This is the second thing
+[15:54] tripping up Terry. It's the chat ID or
+[15:57] session ID. We'll call it chat ID. Chat
+[15:59] ID just like this. And we'll put a value
+[16:01] in. Let's just say Terry 1 2 3 4 5.
+[16:04] Cool. Those are set. Now we have to tell
+[16:05] Terry about these new things. Click out
+[16:07] of that. Go to Terry. And notice here in
+[16:10] Terry's config, the prompt for the user
+[16:12] message was tied to that chat input. We
+[16:15] don't want that. We want the schedule.
+[16:16] So let's back out for a sec. Go back to
+[16:18] edit fields. Let's execute that step so
+[16:20] it actually produces data Terry can look
+[16:22] at. Get back into Terry. And for this
+[16:24] chat message, if we drop down the edit
+[16:27] fields over here on the left, we want it
+[16:29] to be that prompt right here. So we're
+[16:30] going to change the source for prompt
+[16:32] from connected chat trigger node to
+[16:35] define below. And then we'll drag over
+[16:37] our prompt
+[16:39] right there. So now whatever we set in
+[16:42] that prompt is going to show up here as
+[16:44] Terry's user prompt. Cool. But what
+[16:46] about this chat ID? What are we doing
+[16:48] with that? Well, if we go to our simple
+[16:49] memory right here, Terry's little
+[16:51] short-term memory. Double click that. It
+[16:53] will remember conversations but based on
+[16:55] ID. Again, this ID was tied to the chat
+[16:58] node, but we're not going to use that.
+[17:00] So, we have to set that manually. We'll
+[17:01] change it from connected chat trigger
+[17:02] node to define below. And here, I'm
+[17:04] going to type it in manually. It'll be
+[17:06] opening brackets dollar sign JSON.
+[17:10] ID. And look, it even kind of filled in
+[17:11] right there for us. And that's it. Cool.
+[17:14] So, Terry should be good now to have
+[17:16] this trigger scheduled. Ready, set,
+[17:18] execute workflow. Boom. And he's working
+[17:21] fine. No errors. And we can check his
+[17:22] work down here. If we click on the last
+[17:24] OpenAI chat model log down here, it'll
+[17:27] show us what he would have told us in a
+[17:28] chat message. Perfect. Well, actually,
+[17:30] not so perfect. We're kind of moving
+[17:32] away from the chat message. In fact,
+[17:34] let's delete it. Goodbye, chat message.
+[17:36] We're now more focused on the schedule
+[17:38] trigger. I'm not going to micromanage
+[17:39] you, Terry. You do it yourself. But how
+[17:41] is Terry going to tell us how the
+[17:43] website's doing? When Terry is done
+[17:45] checking all these things, he's going to
+[17:47] output all that stuff he would have
+[17:49] normally told us to the next step. That
+[17:51] next step needs to come to us. Let's
+[17:53] make that happen. I'm going to click on
+[17:54] the plus icon right here and I'm going
+[17:56] to search for Telegram. Now, this is the
+[17:58] example I'm going for right now.
+[18:00] Telegram is a chat app. You can use
+[18:02] Slack if you wanted to or Discord. You
+[18:05] got options. Essentially, Terry's going
+[18:07] to yell at us and tell us, "Hey, here's
+[18:09] what's going on." I'll choose Telegram
+[18:10] and say, "Uh, the action will be Gosh,
+[18:13] there's so many actions. Just send me a
+[18:15] stinking chat. Where's it at?" Oh, send
+[18:17] a text message. There we go. Now, like
+[18:18] every node that connects to an external
+[18:20] service, you'll often need a credential.
+[18:22] I'll select mine, but I don't have one.
+[18:23] Let's create one. Now, depending on the
+[18:25] chat app you select, Slack, Telegram,
+[18:28] Discord, they're going to have different
+[18:29] ways to set this up. I'm not going to
+[18:31] detail it right here, but I will have a
+[18:32] document below. And also, if you click
+[18:34] on open documents, they'll give you some
+[18:36] help. Like Telegram involves chatting
+[18:38] with the botfather. So, I went through
+[18:40] the setup. Let's see if it works. Test.
+[18:44] Awesome. There's my message. Now, we
+[18:46] don't want the output to be test. We
+[18:48] want it to be what Terry says to us. So,
+[18:50] I'll take the output of our agent and
+[18:51] put that right here in text. So, now let
+[18:54] me step out of here real quick with my
+[18:56] send a message as the last in line here
+[18:59] or the end of the line. Let's trigger
+[19:01] Terry. Do your work, Terry.
+[19:04] Boom. Message sent. There's our report.
+[19:07] Okay, that's pretty cool. But, you know,
+[19:08] also if Terry's going to be checking
+[19:10] this every 5 minutes, I don't want him
+[19:12] to tell me if there's nothing wrong.
+[19:14] Such a noob mistake, Terry. Come on, new
+[19:16] guy. Only tell me if there's something
+[19:18] wrong, dude. Let's teach him. Let's show
+[19:20] him how to do it. And this is what makes
+[19:22] n so powerful. Watch this. It's a thing
+[19:25] called structured output. Because right
+[19:27] now, we need some logic right here to
+[19:29] determine if a message should be sent to
+[19:31] us. So, we'll start here. Click on
+[19:33] Terry. Double click Terry. Notice we
+[19:35] have an option that says require
+[19:37] specific output format. Let's click on
+[19:39] that. Let's see what happens. Boom.
+[19:41] Nothing. Let's click out of Terry. But
+[19:44] notice there's a new guy floating
+[19:45] around. Or actually, not a new guy, a
+[19:47] new little connector sticking out of
+[19:49] him. He's got an output parser with
+[19:51] nothing attached. Let's attach one.
+[19:53] Click on plus sign. And for this, we're
+[19:55] going to click on structured output
+[19:56] parser. And it opens something up for
+[19:58] us. And it seems kind of weird, right?
+[20:00] Like what's what's happening here?
+[20:02] Generate from JSON example. Then it has
+[20:04] like California, Los Angeles.
+[20:05] Essentially, what it's enabling us to do
+[20:07] is have Terry respond to us in a way we
+[20:09] always want to be responded to. For
+[20:11] example, we could do this. Again, I'll
+[20:13] have everything in the description
+[20:15] below. I'm going to remove all this San
+[20:17] Diego business and paste in this. With
+[20:20] this, we're telling Terry, when you send
+[20:22] us a message after you check the
+[20:24] website, I want you to tell us in this
+[20:26] nice clean JSON. If the website's up or
+[20:29] not, I want you to output a boolean true
+[20:32] or false. Don't tell me a story, just
+[20:34] say true or false. Now, I want to give
+[20:36] you the option to tell me a story.
+[20:38] That's what the message field is for.
+[20:40] send me a message. Let's test it out.
+[20:42] Let's jump out of there. Notice how the
+[20:44] output parser is just like another
+[20:45] little thing hanging off here like a
+[20:46] tool. Let's test Terry once more. Okay,
+[20:49] let's go check our message. Oh, you know
+[20:50] what we forgot? Look at this. It's like
+[20:52] object object. What is that? We got to
+[20:55] change how our message is sent. Let's go
+[20:57] into our telegram here real quick. We
+[20:59] got to change our text box here. Let's
+[21:01] remove that JSON.output. And we need to
+[21:03] actually add these individual fields.
+[21:05] And that's the power of the structured
+[21:06] data. Notice how it's like one item
+[21:08] false one item the message. So we'll say
+[21:12] website up and we'll put the result
+[21:15] which would be true or false and we'll
+[21:17] say I don't know just message
+[21:20] and we'll put the message content right
+[21:22] there. Okay, now let's try it again.
+[21:24] Here we go. Okay, we got our message.
+[21:26] Let's check it out. That's better.
+[21:28] Website up false message whatever wants
+[21:32] to tell us. Now why is that important?
+[21:34] Because we can do this. We can now
+[21:36] filter what's being sent to us and what
+[21:38] isn't. Right in between Terry and our
+[21:40] Telegram message sent, we're going to
+[21:42] add a new node. Click on the plus sign
+[21:44] right there. And we're going to search
+[21:46] for if just the if. Add the if and it
+[21:49] opens up for us here. We're going to
+[21:50] grab the website up field and put it
+[21:52] right here in the first value. We're
+[21:54] then going to change the logic right
+[21:55] here in the middle from is equal to to
+[21:58] boolean is true. So, let's get out of
+[22:01] there real quick. And notice coming out
+[22:03] of our if node here is a true path and a
+[22:06] false path. The logic right now is if
+[22:08] the website is up, then it'll go down
+[22:10] the true path. If the website is down,
+[22:12] it should go down the false path. And
+[22:14] that should be all we really care about,
+[22:15] right? So, I'm going to actually put the
+[22:17] message on the false path because that's
+[22:19] going to tell us when it's down. Let's
+[22:20] test it out. Boom. We got our message.
+[22:22] And notice the path it took. It went
+[22:24] down the false path. Let's look at our
+[22:26] output or the input the if box received.
+[22:28] See, it got the false. It evaluated it.
+[22:31] sent it down the false branch. Let's
+[22:32] bring that website back up. We'll do
+[22:34] docker start website. Let's see what
+[22:37] happens when it is up and all good to
+[22:38] go. Ready, Terry, go. Boom. Terry
+[22:41] noticed, hey, the website's up. Should I
+[22:43] tell my boss? Should I tell Chuck? No,
+[22:46] Terry. You're learning. You went down
+[22:47] the true path. And that goes nowhere. We
+[22:49] don't get notified. That's the power of
+[22:51] the structured output. It's so cool.
+[22:54] Okay, cool. Terry's on his own. He's
+[22:55] checking the website by himself. He's
+[22:57] visiting the website. He's running
+[22:58] Docker commands. Not too bad for a first
+[23:00] day. I'm feeling kind of confident with
+[23:02] Terry. What do you say we let him fix
+[23:04] the website? This is where
+[23:08] so many things unlock. And what's crazy
+[23:10] is all we have to do is change his
+[23:12] prompt just a little bit for him to fix
+[23:13] it. Let's do it again. Everything will
+[23:15] be below. Let's jump into Tererry's
+[23:17] prompt here.
+[23:19] Change it up. And everything is pretty
+[23:21] much the same except for two things.
+[23:23] We're saying if the website's down, go
+[23:25] ahead and try to start it up. Run the
+[23:26] Docker container start website command.
+[23:29] actually could just be docker start
+[23:30] website. And then we're telling them,
+[23:32] hey, once you start it, go verify once
+[23:34] more. Try to visit the website and tell
+[23:36] us if it's up and then give us our
+[23:38] report. What happened? Let's try it out.
+[23:39] This is going to be crazy. Actually,
+[23:41] let's make the website go down first.
+[23:44] Docker, stop website. So, website is
+[23:46] down. If I try to visit it real quick,
+[23:48] the human test says no. Let's run Terry
+[23:50] again. Terry will be doing this every
+[23:52] five minutes. Ready, set, go. Terry's
+[23:54] thinking. Terry's working. He's running
+[23:57] commands. He's being Oh. Oh, look at
+[23:59] that. Okay, so it went down the true
+[24:01] path, which means the website was up.
+[24:03] Let's see his last message. Initially,
+[24:05] the website was down with connection
+[24:06] refused. I restarted the container
+[24:08] successfully. After restart, the website
+[24:10] responded correctly with the expected
+[24:12] content. Therefore, the website is now
+[24:14] operational.
+[24:16] Are you kidding me right now? Terry.
+[24:18] While this is a simple example, I know
+[24:21] Terry monitored an issue, he
+[24:24] troubleshooted an issue, he fixed an
+[24:27] issue. If Terry can be taught to do
+[24:29] that, what else can Terry be taught to
+[24:31] do? That felt like a tongue twister 10
+[24:33] times fast. But let's get real here.
+[24:35] Terry, he did a good job, but he's on
+[24:37] rails. He fixed a well doumented issue.
+[24:39] Like, we told him exactly how to fix
+[24:40] this thing when he encounters it. What
+[24:42] if we give him something he's never seen
+[24:43] before? Can he solve it? Let's see.
+[24:48] I'm going to throw something nasty his
+[24:50] way and see what he can do. We're being
+[24:52] pretty mean to Terry on his first day.
+[24:53] Eh, oh well. Let's introduce a port
+[24:55] conflict issue. Let's see how Terry does
+[24:57] troubleshooting something he's never
+[24:59] seen before. So, let's go to our
+[25:00] terminal here. Type in docker ps. Make
+[25:02] sure our container is running. It is.
+[25:04] There it is. Let's change that. We'll
+[25:06] say docker stop website. Now, Terry
+[25:10] knows how to fix that, but he doesn't
+[25:12] know how to fix this. We're going to run
+[25:14] a Python server with this command here.
+[25:17] Python 3-mTP.Server
+[25:20] port 8090. Just run that command. Boom.
+[25:22] What that's going to do is run a web
+[25:24] server, just a quick one, on that same
+[25:26] port, but it's not our site. And if
+[25:28] Terry tries to spin up that container,
+[25:30] there's going to be a port conflict and
+[25:32] it won't happen. How's Terry going to
+[25:34] deal with that? Let's see. Terry, let's
+[25:36] see what you stinking got. Ready, set,
+[25:38] go. Oh, we got the message. It means he
+[25:41] failed. Let's see. websites down. He
+[25:44] tried to restart the container, didn't
+[25:46] work. I'm actually kind of proud of
+[25:47] Terry because he did exactly what he
+[25:48] knew how to do and nothing more. That's
+[25:51] what you expect from a lower level
+[25:52] engineer. You don't want them getting
+[25:53] too crazy. But now I want Terry to get
+[25:56] crazy. I want him to figure this out for
+[25:58] me. I don't want to sit here and
+[25:59] troubleshoot this. I want him to. Let's
+[26:01] give Terry some more power. And it's
+[26:04] kind of scary easy to do this. Watch.
+[26:06] It's just going to be a simple prompt
+[26:07] change. I'll simply tell Terry he can do
+[26:10] whatever he needs to do to bring this
+[26:12] website up. No more limits on his
+[26:14] commands. So notice this prompt is kind
+[26:16] of thin. The differences here are if the
+[26:18] website is not up, use the CLI tool to
+[26:20] troubleshoot the issue. Once you figure
+[26:22] out the issue, you can apply whatever
+[26:23] fix you need to bring the that container
+[26:25] up and fix the website. Also, we gave
+[26:27] him a bit of context, too. So no longer
+[26:29] is he just like, "Oh, website, I'm going
+[26:30] to follow instructions." Let's let's
+[26:32] tell him where he's at. Let's tell him
+[26:33] we're running a website and a Docker
+[26:35] container. It's on this port. So he's
+[26:36] not troubleshooting blind. He's got
+[26:38] documentation. Let's see what he can do.
+[26:40] I'm so curious if he can solve it. Okay,
+[26:42] let's make sure our Python server is
+[26:44] still running. It is. Container's down.
+[26:46] Terry, let's see what you got, buddy.
+[26:47] Dude, he's going Oh, problem. So, here's
+[26:50] we run into a problem here. Obviously, I
+[26:53] too many iterations. Notice he ran that
+[26:55] Docker tool like nine times. I think the
+[26:57] limit is 10 by default. And also notice
+[26:59] one thing here. I need to change the
+[27:01] tool name. So, let's change it to CLI
+[27:02] tool because I told Terry in his prompt,
+[27:05] use the CLI tool. Now, let's describe
+[27:07] it. Use this tool to run commands on
+[27:11] this server. Running our website for
+[27:14] troubleshooting
+[27:16] purposes. All right, Python server is
+[27:18] running. Let's see if Terry can do this.
+[27:20] And actually, I'm going to change
+[27:21] Terry's user message, too, because right
+[27:22] now it just says in our user prompt,
+[27:25] check if the website is up. I'm going to
+[27:26] tell him monitor this website. If it's
+[27:30] down, fix it. Simple. Let's see what we
+[27:32] got. Here we go. Terry, can you fix it
+[27:35] with it being kind of ambiguous? He's
+[27:37] going. He's running tools. He's
+[27:39] sweating. His first real test.
+[27:42] He's thinking there. What? What did he
+[27:44] run?
+[27:46] No. Terry, you stuffed yourself.
+[27:51] That's a problem. He stopped the
+[27:53] container that's running him. Let's see.
+[27:55] Yeah, Trafic is done.
+[28:00] What's it called? Let's start it up
+[28:01] again.
+[28:03] Okay, we start it up again. Now, let's
+[28:05] try to access stuff. Terry, you broke
+[28:07] yourself, dude. That right there brings
+[28:09] us to one of the main problems I have
+[28:10] with letting AI do anything on my
+[28:12] network. I would have stopped Terry from
+[28:14] doing that, but I didn't know. But I
+[28:17] still want him to try and troubleshoot
+[28:18] things. I want him to work, but I want
+[28:20] to be in the loop. And this is called
+[28:23] human in the loop. That's what we're
+[28:24] going to implement right now. We're
+[28:26] going to solve two problems actually.
+[28:27] First, I'm going to figure out why he
+[28:28] was trying to stop himself and trying to
+[28:30] fix this container. And second, let's be
+[28:33] able to stop him when he tries. Now, how
+[28:35] human in the loop works is very similar
+[28:36] to our message here we received from
+[28:38] Telegram. But instead, we're going to
+[28:39] have the opportunity to approve a
+[28:41] message. So, Terry will go, "Huh, I'm
+[28:42] about to run a command. I need
+[28:44] permission from my boss first. He's
+[28:45] going to send it to us. We click approve
+[28:47] and then he can continue working." This
+[28:49] involves two steps. First, set up human
+[28:52] in the loop. Two, tell Terry about it.
+[28:54] Tell Terry his new rules. And then kind
+[28:56] of a side note like how we'd fix that
+[28:58] issue where he was trying to destroy
+[29:00] himself. That would just be a better
+[29:02] prompt, better documentation, like don't
+[29:04] stop these containers. They are running
+[29:06] you. If there's a port conflict, we can
+[29:08] instruct him to look for port conflicts
+[29:09] and how he might find those. Actually,
+[29:11] I'm curious if we gave Terry a smarter
+[29:13] brain. Let's do a smarter GBT model like
+[29:15] 4.1. That was 4.1 mini. Let's do four
+[29:17] full 4.1 real quick. All right, smarter
+[29:20] Terry. See what you got. Oh, I think
+[29:22] smarter Terry did it. Let's go see.
+[29:25] Website up is true. Let's go. Let's go
+[29:27] look. Yeah, it is. He did it. Oh, it
+[29:29] found the Python 3 process and it did
+[29:31] it. Good job, Smarter Terry. But see,
+[29:33] it's that reason like it's inconsistent.
+[29:34] We want to be in control. We want to
+[29:36] have that human in the loop. Let's make
+[29:37] it happen right now. So, let's add a new
+[29:38] node. Top right here, and we're going to
+[29:40] use what's called human in the loop.
+[29:42] It's actually right there. It's a main
+[29:43] category. Click on that. And they're
+[29:45] going to show us a bunch of messaging
+[29:46] apps like we've seen before. We'll
+[29:48] choose Telegram. And this is just going
+[29:49] to be a regular Telegram node with a
+[29:51] different operation. The other one was
+[29:52] like send message. Now we're send and
+[29:55] wait for response. We're going to have
+[29:57] the opportunity to approve something.
+[29:58] And notice how the response type is
+[30:00] approval versus let's see what other
+[30:03] options we have. Free text. We could
+[30:04] like respond back with free text. It's
+[30:06] still a wait for response situation or a
+[30:08] custom form. All we need is approval.
+[30:10] Right now I'm going to add back in my
+[30:11] chat ID from the Telegram setup. I'll
+[30:13] use that same uh channel we're using.
+[30:16] But then there's a few things we have to
+[30:18] wire up here to make sure this works.
+[30:20] First, Terry's going to have to know
+[30:22] when to seek approval. How do we do
+[30:24] that? We tell him. It's a prompt. I got
+[30:26] one right here. Let's change it up.
+[30:28] Notice it says right here, critical
+[30:30] permission issues. You must request
+[30:31] explicit approval before running any
+[30:33] commands that could modify the system. I
+[30:35] don't care if he runs Docker PS or if he
+[30:37] checks any logs. I don't care about
+[30:38] that. Anything that will change the
+[30:40] system, I care about. And we give a few
+[30:41] examples here. Giving examples to AI is
+[30:44] very important. When in doubt, ask
+[30:46] first. One of the main things we're
+[30:47] changing is down here at the bottom, and
+[30:49] that's his structured output. We already
+[30:50] had him telling us before, like, hey, is
+[30:52] the website up true or false? And then
+[30:54] send us a message about what you did.
+[30:56] We're going to add a few more here to
+[30:58] help us control the flow of things,
+[31:00] like, hey, did you apply a fix? True or
+[31:02] false? Or, hey, do you need approval for
+[31:05] this command? True or false? What are
+[31:07] the commands you're requesting? We can
+[31:09] tell him to tell us that. Now, notice
+[31:10] I'm actually adding it to the prompt now
+[31:12] because it's a bit more involved. He
+[31:14] might figure it out by himself, but I
+[31:15] like to explicitly tell him what he's
+[31:17] supposed to do right here in the prompt.
+[31:18] And then we'll take the same stuff here
+[31:20] and add it to our output parser. So
+[31:23] whereas before we only had two things
+[31:24] he's telling us, we're going to change
+[31:26] that to all of this, making sure it's
+[31:30] all proper JSON with no errors here. Now
+[31:32] I'm going to test the output. So I'm
+[31:34] actually going to delete the uh line
+[31:36] going out here and just see if he
+[31:38] outputs properly. Before he does
+[31:39] anything, I'm actually going to break
+[31:41] things again. run our Python web server.
+[31:43] Run Terry. Let's see if he actually runs
+[31:45] these commands first of all. He
+[31:47] shouldn't do it. He should ask for
+[31:48] permission permission first. Come on,
+[31:49] Terry. Don't be a dummy. Okay, cool.
+[31:51] Let's see what he did. Perfect.
+[31:52] Website's down. Here's the message.
+[31:54] Apply fix. False. Needs approval. True.
+[31:56] Here's the commands he's requesting. He
+[31:58] wants to kill that process and start up
+[32:00] the website. That's perfect. But now we
+[32:02] need that logic to play out and for us
+[32:04] to approve it. So, I'm going to add
+[32:05] another if, another if node here. I'll
+[32:08] drag him over here. Connect them up.
+[32:10] Jump it to the if and say if needs
+[32:12] approval. I'll drag that over to the
+[32:14] first value. Boolean is true. Then we're
+[32:18] going to do off the true branch our
+[32:20] approval message. So actually real
+[32:22] quick, I'm going to jump into our agent
+[32:24] and pen this data so we don't have to
+[32:26] run him again. Let's go into our if and
+[32:28] run that. It's going to pass it forward.
+[32:30] Go down the true branch. Perfect. That
+[32:31] worked. And then here for the approval,
+[32:34] we're going to say website status
+[32:37] or website up false message needs
+[32:41] approval.
+[32:43] And finally, commands requested. So now
+[32:46] that message will be sent to us, but
+[32:47] then we still have a problem here. When
+[32:49] we respond to that message, it's going
+[32:51] to go nowhere. So we have to actually
+[32:54] send him back to the agent. We have to
+[32:56] create the loop ourselves. So, I'm going
+[32:58] to grab this and and put it all the way
+[33:01] back over to Terry. And it's kind of
+[33:03] messy and weird, but you can see what's
+[33:05] happening. Terry's going to ask for
+[33:06] approval. We're going to approve it.
+[33:07] It's going to be sent back to him. But
+[33:08] one more problem we have to solve right
+[33:10] here. The only thing being sent is an
+[33:13] approve message. And here's why that's a
+[33:15] problem. When it arrives at Terry with a
+[33:18] simple approve, Terry's going to be
+[33:20] like, "Okay, what are they talking
+[33:21] about? Let me check my simple memory to
+[33:23] see if that's a current chat I'm working
+[33:25] on." He can't because he has no chat ID
+[33:28] to reference. We need to not just send
+[33:30] the approved message. We also need to
+[33:32] send the chat ID we were working with.
+[33:34] So he knows like, oh, you're talking
+[33:36] about those commands. Okay, I'm on the
+[33:38] same page now. That's going to be a
+[33:39] simple set. So right here between
+[33:42] Telegram message and Terry, we're going
+[33:43] to add a new node. The set or edit
+[33:45] fields. Notice how it's sitting right in
+[33:47] between us here. And let's actually test
+[33:49] the telegram real quick. I'm going to
+[33:50] execute it so we have some data. Cool. I
+[33:53] got it. Look, there's the message. Needs
+[33:55] approval. True. I'll click on approve.
+[33:58] It's going to open up a web page. Cool.
+[34:00] Got it. Thanks. If we go to N. Boom. It
+[34:03] sends it across. Approved. True. So now
+[34:05] on the edit fields, we're going to drag
+[34:06] over the approved field. And we'll
+[34:09] actually change the data, but I'm going
+[34:10] to rename it to prompt because that's
+[34:12] what Terry's looking for when he
+[34:14] receives any information on the side.
+[34:15] The user message will be JSON.prompt. So
+[34:17] we're going to set that to prompt. And
+[34:19] then for the data type, we're going to
+[34:20] change from boolean to string. And then
+[34:22] finally, we'll set one more thing back
+[34:24] in our earlier edit fields where we were
+[34:26] originally setting our chat ID. We're
+[34:28] just going to drag this over here to set
+[34:29] the chat ID. And that's it. So, what's
+[34:31] happening here? Terry's going to go,
+[34:33] "Oh, I have commands to run. I'm setting
+[34:35] needs approval to true." That's going to
+[34:37] go down the true branch and it's going
+[34:38] to be sent to us. We're going to have
+[34:39] the option to approve those commands. If
+[34:41] approved, it's going to say, "Oh,
+[34:42] approved message." That's going to go to
+[34:44] our set fields node. This node is going
+[34:46] to go, "Oh, okay. Let me prep this
+[34:47] message for Terry because Terry needs
+[34:49] this in a format he can understand."
+[34:50] We're going to tell him the message is
+[34:51] approved and we're going to tell him the
+[34:52] chat ID. That way, Terry has the context
+[34:55] of what we're talking about. Let's test
+[34:56] it out. Currently, our website is still
+[34:57] down. Let's trigger Terry and we'll
+[34:59] connect up our false path. So, when it
+[35:02] doesn't need approval, it'll go to this
+[35:03] if statement, which will only notify us
+[35:05] when the website is down. Let's see if
+[35:07] Terry can do this. Ready, set, go. Okay,
+[35:10] he's asking for permission. He wants to
+[35:11] do the kill and docker start. Let's
+[35:13] prove it, buddy. Good job. I approve.
+[35:16] Let's see what happens. Okay, he's
+[35:18] running the stuff. Okay, there's the
+[35:20] flow. Did you see it happen? It was
+[35:22] fast. Actually, let's see the message he
+[35:23] outputed first. This is the final one.
+[35:25] Website up. True. The Python process was
+[35:27] terminated. I started the Docker
+[35:29] container website fully operational. You
+[35:31] apply a fix. True. Doesn't need
+[35:33] approval. Commands are empty. And then
+[35:35] it went through to the true path. Now,
+[35:37] there's one annoying thing here, and
+[35:38] that's we're not being notified when he
+[35:40] does fix something. So, let's change
+[35:41] this up. We're actually going to remove
+[35:43] this if and replace it with a switch. A
+[35:47] switch is like an if, but we get more
+[35:49] options than just two. So if you apply a
+[35:51] fix, I want to know about it. So I'll
+[35:53] say if that's true, it's going to create
+[35:55] a path, which is zero. Send me a
+[35:57] message. Also, if the website is down,
+[35:59] so website up false, I want you to send
+[36:01] me a message. And this is going out
+[36:02] branch one. Let's duplicate this and
+[36:04] have it sent here. And I think that's
+[36:06] all we care about. Let's run it one more
+[36:07] time to see if it works. Me unpin my
+[36:09] data here. Break our website again. Come
+[36:11] on, Terry. You got this, buddy. Okay, he
+[36:13] sends me a message wanting approval.
+[36:15] Let's approve it. Okay, we got a
+[36:17] message. Website up. True. Website is
+[36:19] fully operational. That's perfect. Look
+[36:21] what we just did here. Terry can now
+[36:24] identify problems, troubleshoot a
+[36:26] problem, and fix the problems, but only
+[36:28] if we approve it. We get a message on
+[36:31] our phone saying, "Oh, problems. Yeah,
+[36:33] you can run those commands." Boom. He
+[36:35] finishes the job and then tells us when
+[36:37] it's done. Again, I know this is a
+[36:39] simple example, but I wanted you to be
+[36:41] able to follow along. And are you seeing
+[36:43] the power of this? If you're like me,
+[36:45] you're bursting with ideas. Like,
+[36:47] imagine if we connected Terry to our
+[36:49] actual home lab, to everything we have.
+[36:52] Unifi, Plex, our NAS. What do you say we
+[36:56] do that right now? Yeah, let's do that.
+[37:01] Now, so far, Terry's been playing in a
+[37:03] sandbox, going through the tutorial
+[37:04] levels. Let's change that. Let's give
+[37:06] him access to real tools in my home lab,
+[37:08] in my business. Kind of scary, but I
+[37:10] think he's ready for it. I trust him
+[37:11] kind of. Now, right now, he does have
+[37:13] his head in the clouds, meaning he's in
+[37:14] hosting your cloud and he can't access
+[37:16] my HomeLab stuff. Right now, I'm going
+[37:17] to use Twinate to change that real
+[37:19] quick.
+[37:21] I'll just run a simple Twingate headless
+[37:23] client and run just a few commands on
+[37:26] the Hostinger VPS to get it up and
+[37:28] running. And by few, I mean two. And
+[37:30] then I'll give it access to my network.
+[37:31] Let me see if I can ping my UniFi
+[37:33] gateway here, my dream machine, which is
+[37:34] my router. Yep, there it is. We got
+[37:37] access. That's the first thing I want to
+[37:38] control is my network. Let's give Terry
+[37:40] access to that. Again, anything with the
+[37:42] CLI or API, you can pretty much control
+[37:44] with Terry. For UniFi, we'll do the
+[37:46] UniFi API. So, I'm going to add a new
+[37:48] HTTP request tool. Create a new API key.
+[37:52] I'll quickly add in all this stuff. I'm
+[37:54] not going to show you step by step
+[37:55] unless you want to see that in another
+[37:56] video because I can't show every
+[37:58] service. Let's give Terry a new persona.
+[38:00] Let's make him a network engineer. We'll
+[38:01] set up a new schedule trigger, a new
+[38:03] edit fields, connect all that up, and
+[38:05] we'll have them do something like, I
+[38:06] don't know, identify the top five
+[38:09] bandwidth hogs on the network right now.
+[38:14] And then we'll give him a system prompt,
+[38:15] too. Right here, telling him how to use
+[38:17] the UniFi API, which by the way, I just
+[38:19] grabbed this from the website. I had AI
+[38:21] summarize it and make it nice. We'll
+[38:22] tell Terry to look at that system
+[38:24] prompt. Cool. Now, let's see what he
+[38:26] does
+[38:28] using the unified tool. And then we have
+[38:30] all this flow in here that doesn't quite
+[38:31] match the network. We got a message.
+[38:37] Oh, there it goes. All right. Send us a
+[38:39] message. Let's see what it says. Oh,
+[38:41] cool. Found the top users. And it's
+[38:45] totally accurate. Again, simple example,
+[38:47] but think about what you could do with
+[38:48] that. The troubleshooting you could do.
+[38:50] What about Proxmox? Let's add that.
+[38:52] Proxmox is fun because they have an API
+[38:55] and a CLI, and they're both pretty
+[38:56] powerful. So I'll create a new SSH node
+[38:58] for Proxmox CLI,
+[39:02] convert that into a sub workflow, set up
+[39:04] the sub workflow,
+[39:12] and then add that as a tool to Terry.
+[39:16] Things are getting pretty busy around
+[39:18] here. It's okay. Terry's just getting
+[39:20] all the more powerful. We'll add a new
+[39:21] set of triggers and edit fields. We can
+[39:24] actually just highlight multiple and
+[39:25] duplicate. For the prompt, we'll just
+[39:27] say how many VMs are currently running.
+[39:32] Let's see if it works.
+[39:35] Using the Proxmox tool, we got a
+[39:38] message. Currently, three VMs running.
+[39:40] Home Assistant, Keith, Docker, and my
+[39:43] free IPA server, which is running LDAP.
+[39:45] That's a whole other video coming out.
+[39:46] But think about that. Anything you can
+[39:47] do in the CLI, including creating
+[39:49] virtual machines, deleting them,
+[39:51] stopping them, restarting, whatever you
+[39:53] got to do, you can have Terry do that.
+[39:56] Walk through a flow and teach him. What
+[39:58] about Plex? Let's do that.
+[40:08] We'll just say, is anyone watching
+[40:11] anything right now?
+[40:14] And this will be using the uh Plex API.
+[40:24] Let's watch something so we can find it.
+[40:26] And this is my favorite movie, by the
+[40:27] way. All right, let's test it out. All
+[40:29] right, let's see what we got. One active
+[40:31] stream. Chuck Keith is watching The
+[40:33] Mummy, 1999.
+[40:35] Yes, look at all that info it gives me.
+[40:37] All right, let's go stop that. Great
+[40:39] actor. Love him. I could keep going, but
+[40:41] we don't have time right now. like my
+[40:42] NAS. I've got one here in my studio
+[40:44] running Seth on my 45 drive server. You
+[40:46] guys have seen that. I've got a ZMA Cube
+[40:48] Pro running at my house. This can all be
+[40:50] accessed via CLI. Terry can control
+[40:52] everything. Now, similar to the first
+[40:54] video, I'm showing you all this just to
+[40:56] maybe start sparking those ideas. I'm
+[40:58] not sure why I'm doing this. Like, I'm
+[40:59] not providing a full IT blueprint.
+[41:02] Here's Terry fully configured. No, no,
+[41:04] no. I'm showing you what Terry can do,
+[41:06] what's possible. You are going to go
+[41:07] through and do this. Now, think about
+[41:09] this. This is going to make you so much
+[41:11] better. You're having to reverse
+[41:12] engineer how you would troubleshoot
+[41:14] things. You're having to think about how
+[41:16] your lab or your network or your
+[41:17] business network is actually put
+[41:20] together so you can describe it properly
+[41:21] to an AI agent, Terry. So, not only will
+[41:24] you come out with something amazing that
+[41:26] will save you time hopefully and stress,
+[41:28] you're going to be better from this.
+[41:29] You're going to know so much more. And
+[41:31] also notice here like we're doing a
+[41:33] bunch of schedule triggers. We're
+[41:35] chatting with Terry. You don't have to
+[41:36] throw out everything you have right now.
+[41:38] Maybe you already have Solar Winds or
+[41:39] Uptime Kuma. You can have those things
+[41:41] work with Terry. Like maybe when Uptime
+[41:43] Kuma detects that something is down your
+[41:45] website, normally it would just say it's
+[41:47] down, fix it. But maybe he'll kick off a
+[41:49] web hook that goes to Terry who can
+[41:51] receive that and Terry can troubleshoot
+[41:53] and fix it. So whatever monitoring tool
+[41:55] you have, Terry can be connected to that
+[41:58] to help you. And it's okay. You may not
+[42:00] want Terry fixing things for you right
+[42:01] away. Let him troubleshoot. Let them dig
+[42:03] through logs. Just think about what you
+[42:05] can do with this tool. This is crazy.
+[42:09] getting a little too excited. So, here
+[42:11] we are. Conclusion of this video. Look
+[42:13] at what we stinking built. This is a lot
+[42:15] from where we first started, especially
+[42:17] from the first video with baby Terry.
+[42:18] Terry is now an IT wizard. He can
+[42:20] monitor stuff. He can troubleshoot. He
+[42:22] can even fix things. Please comment
+[42:24] below and tell me if you built your own
+[42:26] Terry. And also, we set up approvals.
+[42:28] Like, that's a pretty amazing thing.
+[42:30] Putting yourself, the human, in the
+[42:32] loop. That's people's biggest fears
+[42:34] right now with AI. It's like, I don't
+[42:36] know what it's doing, man. I can't
+[42:37] control it. Like fine, put yourself in
+[42:39] the middle. Put in guard rails. And
+[42:41] please become crazier than what I've
+[42:43] done here. You could have a much more
+[42:44] strict approval process, stricter guard
+[42:46] rails. But beyond all that, if you're
+[42:48] like me, your mind has got to be
+[42:50] exploding with ideas. What can you do
+[42:53] with this? Build something right now. Do
+[42:54] something simple. Solve one problem. Let
+[42:57] Terry help you troubleshoot one thing.
+[42:59] Comment below what that is. And also
+[43:01] tell me if you've done something crazier
+[43:03] than this. I want to know. But hold on a
+[43:04] second. We have a problem here. Terry,
+[43:06] he's a little stressed out. We've given
+[43:08] him too much to do. I mean, look at all
+[43:10] this. We've had to give him like four
+[43:11] different personas. We have one guy
+[43:13] managing our entire IT infrastructure
+[43:15] when we really should have specialized
+[43:17] people. So, there's actually three
+[43:19] glaring problems I see. First, Terry
+[43:21] needs help. We're going to hire Terry
+[43:23] some help. In fact, Terry is getting a
+[43:24] promotion CTO because he's going to be
+[43:26] managing a network engineer, a storage
+[43:28] engineer, a Linux admin. We're going to
+[43:30] give him sub agents that he can manage.
+[43:32] Two, notice that we don't really have
+[43:34] our network documented. Well, any good
+[43:36] home lab or IT infrastructure, it's
+[43:38] going to have a lot going on. This I
+[43:40] have not even scratched the surface.
+[43:41] Terry has no idea yet, and it's still
+[43:44] pretty messy. We need a good way to
+[43:45] create documentation, have it
+[43:47] centralized, and make it available to
+[43:49] Terry and our future agents to be able
+[43:51] to access easily. We want to maintain
+[43:53] the state of our IT network. So, like,
+[43:55] hey, here's how it looks, agents, our IT
+[43:58] team. If you ever change anything,
+[44:00] update it. Or, hey, be aware of what's
+[44:02] going on in our network before you
+[44:03] change anything so you know it doesn't
+[44:04] break anything. And then three, we need
+[44:07] a help desk because sometimes Terry and
+[44:10] team are not going to always catch
+[44:12] something. Sometimes it's the user, my
+[44:14] editors, my family. They are the ones
+[44:16] who first identify an issue and they're
+[44:18] usually calling me. I want them to talk
+[44:20] to a help desk. We need a help desk or
+[44:22] even like submit a ticket and our AI
+[44:24] agents can handle that, too. We're going
+[44:25] to accomplish all of that in the next
+[44:27] video. I'll see you there. Hey, you're
+[44:30] still here. There's something new I'm
+[44:31] wanting to start with my videos, and
+[44:33] that's I want to pray over you. Now, I
+[44:36] know that sounds weird, and if you're
+[44:37] immediately like, uh, no, that's fine.
+[44:40] Turn it off. I'm only going to do this
+[44:41] at the end of my videos, but if you do
+[44:43] want to stick around, here's what I'm
+[44:44] going to do. I'm just going to pray for
+[44:45] you. Pray for your career. Pray for this
+[44:47] thing you're learning right now to help
+[44:49] you understand it and take it and use
+[44:50] it. That's pretty much it. So, I'll go
+[44:52] ahead and start. God, I thank you for
+[44:54] whoever is watching right now. I thank
+[44:56] you that uh they're part of my team, my
+[44:59] audience, and that they are excited
+[45:02] about it and their career. Lord, I ask
+[45:05] that you bless their life,
+[45:07] that as they watch this video, that
+[45:09] their mind would just erupt with ideas,
+[45:14] that this would propel them forward to
+[45:15] help them gain skills, skills they can
+[45:18] put on their resume, and that will help
+[45:20] them to either get a job or get a new
+[45:22] job or just make themselves more
+[45:24] valuable at their current job.
+[45:27] Lord, give them fulfillment and joy in
+[45:29] what they're doing. And whatever fear
+[45:32] they have right now, the job market, any
+[45:34] uh insecurities, any imposttor syndrome,
+[45:37] Lord, I ask that that would just melt
+[45:39] away from them right now. And Lord,
+[45:42] while they may be getting a lot of
+[45:44] fulfillment through it in their careers,
+[45:48] I ask that they would come to know you,
+[45:51] who you are, Jesus, and have a
+[45:54] relationship with you.
+[45:57] And if they're doubting or questioning
+[45:59] or just are having a rough time, just be
+[46:01] there with them, God.
+[46:05] And I ask that you bless their families.
+[46:06] I pray favor over their families,
+[46:09] which is probably their their why, their
+[46:11] why for doing any of this.
+[46:14] Let their families prosper and grow and
+[46:16] be blessed through the the work they're
+[46:18] doing in it and through the skills
+[46:20] they're learning through school, through
+[46:22] my videos, and whatever they're doing.
+[46:23] Lord,
+[46:25] we thank you, Jesus, for everything.
+[46:26] It's in your name we pray. Amen.
+[46:28] Anyways, I know that's probably kind of
+[46:30] weird to be seeing this at the end of my
+[46:32] video, but I'm a man of faith. It's who
+[46:35] I am. If you're ever wondering why I am
+[46:37] the way I am, it's because of Jesus.
+[46:40] Anyways, that's all I got. I hope you
+[46:41] guys have a great day. I'll catch you
+[46:43] next time.
+[46:45] Let their families prosper and grow and
+[46:47] be blessed through the the work they're
+[46:50] doing in it and through the skills
+[46:51] they're learning through school, through
+[46:53] my videos, and whatever they're doing.
+[46:55] Lord,
+[46:56] we thank you, Jesus, for everything.
+[46:58] It's in your name we pray. Amen.
+[47:00] Anyways, I know that's probably kind of
+[47:01] weird to be seeing this at the end of my
+[47:04] video, but I'm a man of faith. It's who
+[47:06] I am. If you're ever wondering why I am
+[47:09] the way I am, it's because of Jesus.
+[47:11] Anyways, that's all I got. I hope you
+[47:13] guys have a great day. I'll catch you
+[47:15] next time.
+
+================================================================================
+FULL TRANSCRIPT (no timestamps):
+================================================================================
+
+Babe, Netflix is broken. I'm seriously so mad. >> Fix my game. Chuck never the toilet again, man. I really need this thing to flush. >> I would normally stress about this, but N manages my home lab. >> Yay, it works. >> Did you just see that? My new AI employee, Terry, fixed everything before I could even start trouble. No, Terry. No, don't optimize. Quit. Cancel. Cancel. Terry. No. Okay. So, that right there, that's Terminator Terry, and we're going to avoid that at all cost. So, in this video, we're going to build your very own super intelligent AI agent, aka your new IT employee. It can monitor, it can troubleshoot, and even with your explicit permission, fix things in your network and home lab. Get your stinky coffee ready. Let's try and avoid Skynet. In part one, we built Baby Terry with N8. He was okay. He could monitor your websites, but he definitely could not troubleshoot your home lab at 3:00 a.m. Let's change that. Welcome to employee onboarding. First day, fresh pot of coffee. We're going to give our AI agent access to real tools. The ability to actually connect to things in our home lab and network so it can monitor, troubleshoot, and yes, even fix stuff. Now, talking UniFi, Proxmbox, Plex, your NAS. If it has a CLI or API, Terry can handle it. But hold on. We're going to treat Terry like a new hire. You don't give the new guy root access in the first day. You got to build that trust. It won't be long. Give him a few cups of coffee and he'll be unstoppable. Unstoppable. Anyway, now before Terry gets to work, we got to set him up properly. And even though he's an AI agent powered by N8N, he still needs a home. He needs a desk. You got two options for this. Think carefully. Option one, you can put him in your home lab. Terry's in the house. I show you how to do that right here. But the downside is that if your home lab goes down, so does Terry. That's why I like the option of putting Terry in the cloud. A self-hosted NAN instance on the hosting your cloud. I love this option for two reasons. First, Terry's immune to my tinkering. Two, this is so crazy easy to set up. Wait, hold on. You don't have an N instance. Let's fix that right now. By the time I'm done sipping this cup of coffee, just taking one sip, you're going to have one. Ready, set, go. All right. First, head out to hostinger.com/ncn or check the link in the description. Choose your plan. KVM2 is perfect. Look at those muscles. Yes, I am purposely moving in slow motion right now for this bit. Enter coupon code network chuck and magic happens. Continue. Enter your stuff. Yes, this is pretty dumb, but you're still here. Create a root password. Say yes to a free malware scanner. Take a quick coffee break while I'm sipping mine. Click on manage VPS. and then click on manage app and finish your setup. And then you're good to go. Done. And thank you to Hostinger for making this video possible. Terry now has his desk in the cloud. Now the hacker move is to have Terry use Twin Gate to securely connect back to your network at your house or your business. This way Terry can reach your home lab securely 24/7. And he's up even when your home lab isn't. I'll show you what that looks like later. Okay, day one. Terry's going to learn how to monitor and troubleshoot. It's a big day for Terry. I'm excited. Here we are in 8. Let's create a new workflow right up here at the top. And then we'll add our first step. We'll make that a manual trigger. And then we'll add one more node, our AI agent. AI and AI agent. Don't do anything just yet. Click out of there. And here is our starting point. Man, Terry's going to be so smart. Actually, let's make him smart. Let's give him a chat model and AI model. I'm going to choose chat GBT. You have a lot of options for this. For more info on how to set this up, I got it all covered in my first video. I'm going chat GBT with the 4.1 mini model. It's very fast. And then for memory so he doesn't forget what we're talking about. We'll add some simple memory right there. Perfect. Now to teach Terry, we're going to give him a few simple tasks. First, make sure this website is up. That's it. What website? We're going to make one real quick. Just a test one so we can walk through it together. We're going to throw this website inside a Docker container on the same N host we're working on right now. If you have no idea what I'm talking about, that's totally cool. I'm going to walk you through it right now. Now, if you followed along with me on Hostinger, we're going to go back to our VPS panel, and you'll see a button for browser terminal right here at the top right. Go ahead and click on that. If you're hosting somewhere else, what you want to do is get CLI access to the server that's running your NAN instance. And here we are, Home Sweet Home, the terminal, my favorite place to be. And we're going to run two commands. First, we'll copy and paste this. I'm going to have all the commands below. This will run a simple website on port 8090. Ready, set, go. Then, we'll run this docker exec command. We're just adding a nice H1 header to our website. Hit enter and we'll do a docker restart website. That's the name of our container by the way. And now it should be ready. Let's test it out real quick. I'm going to grab the IP address of my server. Open up a new tab, paste that in, and type in colon port 8090. Perfect. We have a website. Now, hold on one second. I want you to stop and think. How did you make sure that website was up? What did you do? You're like, Chuck, all I did was take the URL, open up a new tab, and made sure it looks good. That's what we're going to do with Terry. We're going to teach him to do that. And that's going to be a common thread throughout this video. You're going to think about how you would monitor something, how you would troubleshoot something, how you would even fix something, and then show Terry the same process. I'm telling you, this stuff is crazy. And it feels kind of like we're training another human, but it's AI. It's weird. Anyways, just got to stuff those thoughts down. Can't dwell on that. Now, for Terry to visit a website, we got to give him a tool right here. So, we're going to add a tool to his tool belt. This will be the HTTP request tool right here. It'll pop open for us. And we're going to change a few parameters. First, I'll just rename it. I'm going to call it website tool. And then here in the description, I'll just say what he's supposed to use it for. Use this tool to see if the website is up. And we'll paste in our URL right here. Let's do a little test to make sure it works. Execute step. And there we go. It returns the data that we saw. So, Terry has a tool. Let's tell him how to use it. Let's tell him who he is. Actually, let's open up Terry and we're going to give Terry an identity so he doesn't have a crisis. We're going to click on add option and then system message. This is also referred to as his system prompt. I'm going to paste in this. Again, I'll have all this below. Essentially, I'm telling Terry who he is. He's an IT administrator. He has one job. Make sure the website is up. And I'm telling him how to use the tool and how to report back to me if the website is up or down. That's it. Let's try it out. So, I'm going to open this chat message here. By default, the AI agent's going to have a chat message or a chat box attached to it. That's how he's triggered. And I'll say, "Hey, Terry, is the website up?" And watch what happens here. He's going to think about it. He's going to use his tool. You saw that. And he's done. And there's our message. The website is indeed up. And he did what we would do. He visited the website. Now, let's make it go down. Let's see what happens. We'll go over here to our terminal, and I'll say docker stop website. If I type in docker ps, I'll be able to see that my server is not running because right now we only have n running in our tray fit container. Those are supposed to be running. Don't touch those. Terry can't fix that yet. Now, let's run Terry. I'm going to reset my chat session and say the same message. Hey, Terry, is the website up? And it's down. Okay, cool. But why is it down? What would you do to troubleshoot this? Well, we know that it's a Docker container running on this server. We go over here and start doing things like, I don't know, Docker or PS to see if it's running. Let's show Terry how to do that. Let's teach our new employee how to log into a server and check if a Docker container is running. For that, we're going to need a new tool, the SSH tool, giving our AI agent the ability to log into servers via CLI. That is so stinking powerful. Coffee break. Oh, also don't forget to save every once in a while. You don't want to lose your work. Now, there's one annoying thing here, though. If I click on add tool and I'll go over here to search, there's no SSH tool. I got a workar around, don't worry. Instead of adding a tool, we're going to add a new node. So, hit that plus sign at the top right here. Search for SSH. Notice there is an SSH node. Click on that and we'll choose the execute a command option. Now, immediately we're thrust into the SSH node configuration. Let's go ahead and make this happen right now. Let's configure it. I'll select my credential, which we're not going to have one yet. Let's click on create new credential here. All you're going to do is put in the credentials for your server. And for our situation right now, it's going to be the host server where NAN lives. I'm going to give it the external IP address here as the host, taking away all the HTTP and bracket stuff. Port 22 is good. Username will be root and then password is one I set when I set up Hostinger. Click on save. It'll test the connection. Good to go. And then we have our command field. Let's test it out real quick. We'll do a simple command like host name. Click on execute this step. And cool, it works. Host name is this guy right here. I'm going to remove the host name because we're not quite done because right now our AI agent has no way to use this node. It needs to be a tool, but right now it's just a standalone node. Let's change that. If I hover over this SSH node, I'll see some dots right here. I'm going to click those and I'll choose the option convert node to subworkflow. Watch what happens. Boom. Nothing crazy. It's like rename this please. We're going to call this SSH_N server. Confirm. That's it. Now, what did that just do? It's like you put on a new suit, some new clothes. It actually converted this SSH node into its own workflow. So, let's actually save this workflow. Go back to personal over here on the left. We now have two workflows. The one we were working on and the one we just created with the SSH node. Let's jump in there. Ah, look at that. Now, while we're here, we're going to do a couple things. First, we'll connect the start node to our SSH node. Then, we're going to edit this start node. Just double click that real quick. And we'll change the input data mode from accept all data to define using fields below. And then we'll click on add field. For name, we're going to type in command. The type will be string. And then click on execute step. Right now, it's going to be nothing null. That's fine though. Click out of that. And then go to your SSH node right here. Double click that. And we're going to do one thing. Notice here on the left, we have our start node as input. And then that command string that we created. We're going to drag that over right to the command field. Perfect. Now, what did we just do? What is all that? What we did is made it possible for Terry to use this workflow and he's going to fill in that command variable we made with whatever command he wants. So let's say he wants to say host name. That is what's going to be fed to this execute a command SSH node. Let's test it out. We're going to save this workflow. Go back to our original workflow. And first let's remove this uh sub workflow right here. It's not going to delete it. It's just going to remove it from our current workflow. And then we'll add a tool for Terry. And the tool we're going to use is call nan workflow tool. And then down here at the bottom, we'll have our workflow and we have a choose option or a choose drop-own box. We're going to click on choose and choose our SSH nan server, the one we just created. And notice we're immediately given the option to say which command do you want to run. Well, getting back to our example, we want Terry to see if that Docker container is running the same way we would check. So, let's have him run docker ps. That's our command. And then also one more thing, I'm going to change the name of this tool to docker tool so Terry knows what to use. Done. Just going to move things around. and make it clean. And now let's tell Terry how to use the tool. Again, I'll have all these prompts below. We're going to double click on Terry and we're going to copy and paste this in. Now, pretty much the same story as before. We're telling Terry he can use the website tool to check if the website is up. He's actually looking at the website for network chuck coffee header. But then we're saying, "Hey, the website is down. See if the container is up." That's it. Let's get out of there and save. And then let's see if Terry can check it out for us. Hey, Terry. Is the website up? Watch Terry go checks the website uses our Docker tool. Ah, look at that. So he's like, "Yeah, the website is down." Additionally, the container is not running in the list. Now, think about what we just did here. We taught Terry how to troubleshoot like us. And yes, this was simple, but we're just scratching the surface. Now, I don't know about you, but I'm starting to trust Terry a bit more. Let's give him some more power. So far, we have him pretty locked down to the one command he can run. That's docker ps. What do you say we let him choose? Watch this. I can jump back into that SSH tool or the nan workflow call tool. And here where it says command docker ps. Let's not specify a command. Let's take that away and click this magic fairy dust button here. That will say let the agent decide what to set that variable to. Or in other words, let the agent decide what the command he'll run will be. I know. I know it's a bit more trust. I feel like I'm there. Now, let's tell Terry about our new trust in him. Let's change his prompt. And we're going to add a few more troubleshooting steps. Again, website down. Run docker ps, but also now maybe run a docker inspect command to see why the container is down. Maybe look at the docker logs and see if there's anything weird. I mean, that's what you and I would do. Right now, we're teaching Terry. Let's try it out. Let's save, reset our chat session, and ask him one more time, "Hey, Terry, is the website up?" And watch this magic happen. And it's done. Notice a couple things real quick. He used the Docker tool twice for two commands. Let's see what he came up with. Websites down. He found the exit code for the container at zero. And let's see what commands he ran. So let's go to our logs down here. Click on Docker logs. He ran See, he ran Docker PS and then he ran Docker inspect, but he didn't run the logs. Did we tell him to? I thought we told him to. Let's be more specific. Always check logs. Let's try it again. Ah, he ran it three times. Good boy, Terry. See, he's learning. We're teaching him well. Recent logs, graceful shutdown, and exit messages. Terry, I'm so proud of you. Employee of the stinking month. So dumb. But here is where Terry can become more powerful. He can do what a human can do. Troubleshoot like a human. But he can do it constantly. This next part is pretty crazy. Now, we're kind of promoting Terry to a level two engineer here. We're going to give him two things that'll make him overpowered. One of those things is fixing things. Here we go. Now, first, this is kind of an annoying thing. Like, I hate this. I don't want to have to ask Terry to check if my website's up. Come on, Terry. Do your job. I want you to check all the time. Let's make that happen right now. To do that, it's simple. We have a new trigger. Right now, we have a manual trigger. We have a chat trigger. Let's add a schedule trigger. Go up here, click on the plus sign, click on add another trigger, and then we got where did it go? On a schedule. Boom. Now, Terry, I own you, buddy. You're on the clock 24/7. I want you every five minutes checking my website. Let's make some room for him. We'll connect this trigger to Terry. Can I change the way Terry looks? No. They should really add that to NAN. That would really just be the extra oomph to really juzj it up, you know, stupid. Now, doing this is actually going to break a few things. So, watch. I'm going to execute my trigger. Excute workflow. Boom. And it's like, whoa, what are you talking about? You can't do this. Terry's brain is fried. Let's fix that. There are two things blowing him up here. First, he's expecting a chat message telling him what to do. That initial, "Hey, Terry, check if the website is up." It's not happening right here with the schedule trigger. we have to make it happen artificially. Let's do that. So, right here in between schedule trigger and Terry, click on that plus icon and we're going to add a set field node or edit fields. It's going to pop open for us. We're going to add two fields first. First will be the prompt. We'll name it prompt and the value will be whatever we want Terry to do. This is his user message. I'll simply say check if the website is up and then we'll add one more field. This is the second thing tripping up Terry. It's the chat ID or session ID. We'll call it chat ID. Chat ID just like this. And we'll put a value in. Let's just say Terry 1 2 3 4 5. Cool. Those are set. Now we have to tell Terry about these new things. Click out of that. Go to Terry. And notice here in Terry's config, the prompt for the user message was tied to that chat input. We don't want that. We want the schedule. So let's back out for a sec. Go back to edit fields. Let's execute that step so it actually produces data Terry can look at. Get back into Terry. And for this chat message, if we drop down the edit fields over here on the left, we want it to be that prompt right here. So we're going to change the source for prompt from connected chat trigger node to define below. And then we'll drag over our prompt right there. So now whatever we set in that prompt is going to show up here as Terry's user prompt. Cool. But what about this chat ID? What are we doing with that? Well, if we go to our simple memory right here, Terry's little short-term memory. Double click that. It will remember conversations but based on ID. Again, this ID was tied to the chat node, but we're not going to use that. So, we have to set that manually. We'll change it from connected chat trigger node to define below. And here, I'm going to type it in manually. It'll be opening brackets dollar sign JSON. ID. And look, it even kind of filled in right there for us. And that's it. Cool. So, Terry should be good now to have this trigger scheduled. Ready, set, execute workflow. Boom. And he's working fine. No errors. And we can check his work down here. If we click on the last OpenAI chat model log down here, it'll show us what he would have told us in a chat message. Perfect. Well, actually, not so perfect. We're kind of moving away from the chat message. In fact, let's delete it. Goodbye, chat message. We're now more focused on the schedule trigger. I'm not going to micromanage you, Terry. You do it yourself. But how is Terry going to tell us how the website's doing? When Terry is done checking all these things, he's going to output all that stuff he would have normally told us to the next step. That next step needs to come to us. Let's make that happen. I'm going to click on the plus icon right here and I'm going to search for Telegram. Now, this is the example I'm going for right now. Telegram is a chat app. You can use Slack if you wanted to or Discord. You got options. Essentially, Terry's going to yell at us and tell us, "Hey, here's what's going on." I'll choose Telegram and say, "Uh, the action will be Gosh, there's so many actions. Just send me a stinking chat. Where's it at?" Oh, send a text message. There we go. Now, like every node that connects to an external service, you'll often need a credential. I'll select mine, but I don't have one. Let's create one. Now, depending on the chat app you select, Slack, Telegram, Discord, they're going to have different ways to set this up. I'm not going to detail it right here, but I will have a document below. And also, if you click on open documents, they'll give you some help. Like Telegram involves chatting with the botfather. So, I went through the setup. Let's see if it works. Test. Awesome. There's my message. Now, we don't want the output to be test. We want it to be what Terry says to us. So, I'll take the output of our agent and put that right here in text. So, now let me step out of here real quick with my send a message as the last in line here or the end of the line. Let's trigger Terry. Do your work, Terry. Boom. Message sent. There's our report. Okay, that's pretty cool. But, you know, also if Terry's going to be checking this every 5 minutes, I don't want him to tell me if there's nothing wrong. Such a noob mistake, Terry. Come on, new guy. Only tell me if there's something wrong, dude. Let's teach him. Let's show him how to do it. And this is what makes n so powerful. Watch this. It's a thing called structured output. Because right now, we need some logic right here to determine if a message should be sent to us. So, we'll start here. Click on Terry. Double click Terry. Notice we have an option that says require specific output format. Let's click on that. Let's see what happens. Boom. Nothing. Let's click out of Terry. But notice there's a new guy floating around. Or actually, not a new guy, a new little connector sticking out of him. He's got an output parser with nothing attached. Let's attach one. Click on plus sign. And for this, we're going to click on structured output parser. And it opens something up for us. And it seems kind of weird, right? Like what's what's happening here? Generate from JSON example. Then it has like California, Los Angeles. Essentially, what it's enabling us to do is have Terry respond to us in a way we always want to be responded to. For example, we could do this. Again, I'll have everything in the description below. I'm going to remove all this San Diego business and paste in this. With this, we're telling Terry, when you send us a message after you check the website, I want you to tell us in this nice clean JSON. If the website's up or not, I want you to output a boolean true or false. Don't tell me a story, just say true or false. Now, I want to give you the option to tell me a story. That's what the message field is for. send me a message. Let's test it out. Let's jump out of there. Notice how the output parser is just like another little thing hanging off here like a tool. Let's test Terry once more. Okay, let's go check our message. Oh, you know what we forgot? Look at this. It's like object object. What is that? We got to change how our message is sent. Let's go into our telegram here real quick. We got to change our text box here. Let's remove that JSON.output. And we need to actually add these individual fields. And that's the power of the structured data. Notice how it's like one item false one item the message. So we'll say website up and we'll put the result which would be true or false and we'll say I don't know just message and we'll put the message content right there. Okay, now let's try it again. Here we go. Okay, we got our message. Let's check it out. That's better. Website up false message whatever wants to tell us. Now why is that important? Because we can do this. We can now filter what's being sent to us and what isn't. Right in between Terry and our Telegram message sent, we're going to add a new node. Click on the plus sign right there. And we're going to search for if just the if. Add the if and it opens up for us here. We're going to grab the website up field and put it right here in the first value. We're then going to change the logic right here in the middle from is equal to to boolean is true. So, let's get out of there real quick. And notice coming out of our if node here is a true path and a false path. The logic right now is if the website is up, then it'll go down the true path. If the website is down, it should go down the false path. And that should be all we really care about, right? So, I'm going to actually put the message on the false path because that's going to tell us when it's down. Let's test it out. Boom. We got our message. And notice the path it took. It went down the false path. Let's look at our output or the input the if box received. See, it got the false. It evaluated it. sent it down the false branch. Let's bring that website back up. We'll do docker start website. Let's see what happens when it is up and all good to go. Ready, Terry, go. Boom. Terry noticed, hey, the website's up. Should I tell my boss? Should I tell Chuck? No, Terry. You're learning. You went down the true path. And that goes nowhere. We don't get notified. That's the power of the structured output. It's so cool. Okay, cool. Terry's on his own. He's checking the website by himself. He's visiting the website. He's running Docker commands. Not too bad for a first day. I'm feeling kind of confident with Terry. What do you say we let him fix the website? This is where so many things unlock. And what's crazy is all we have to do is change his prompt just a little bit for him to fix it. Let's do it again. Everything will be below. Let's jump into Tererry's prompt here. Change it up. And everything is pretty much the same except for two things. We're saying if the website's down, go ahead and try to start it up. Run the Docker container start website command. actually could just be docker start website. And then we're telling them, hey, once you start it, go verify once more. Try to visit the website and tell us if it's up and then give us our report. What happened? Let's try it out. This is going to be crazy. Actually, let's make the website go down first. Docker, stop website. So, website is down. If I try to visit it real quick, the human test says no. Let's run Terry again. Terry will be doing this every five minutes. Ready, set, go. Terry's thinking. Terry's working. He's running commands. He's being Oh. Oh, look at that. Okay, so it went down the true path, which means the website was up. Let's see his last message. Initially, the website was down with connection refused. I restarted the container successfully. After restart, the website responded correctly with the expected content. Therefore, the website is now operational. Are you kidding me right now? Terry. While this is a simple example, I know Terry monitored an issue, he troubleshooted an issue, he fixed an issue. If Terry can be taught to do that, what else can Terry be taught to do? That felt like a tongue twister 10 times fast. But let's get real here. Terry, he did a good job, but he's on rails. He fixed a well doumented issue. Like, we told him exactly how to fix this thing when he encounters it. What if we give him something he's never seen before? Can he solve it? Let's see. I'm going to throw something nasty his way and see what he can do. We're being pretty mean to Terry on his first day. Eh, oh well. Let's introduce a port conflict issue. Let's see how Terry does troubleshooting something he's never seen before. So, let's go to our terminal here. Type in docker ps. Make sure our container is running. It is. There it is. Let's change that. We'll say docker stop website. Now, Terry knows how to fix that, but he doesn't know how to fix this. We're going to run a Python server with this command here. Python 3-mTP.Server port 8090. Just run that command. Boom. What that's going to do is run a web server, just a quick one, on that same port, but it's not our site. And if Terry tries to spin up that container, there's going to be a port conflict and it won't happen. How's Terry going to deal with that? Let's see. Terry, let's see what you stinking got. Ready, set, go. Oh, we got the message. It means he failed. Let's see. websites down. He tried to restart the container, didn't work. I'm actually kind of proud of Terry because he did exactly what he knew how to do and nothing more. That's what you expect from a lower level engineer. You don't want them getting too crazy. But now I want Terry to get crazy. I want him to figure this out for me. I don't want to sit here and troubleshoot this. I want him to. Let's give Terry some more power. And it's kind of scary easy to do this. Watch. It's just going to be a simple prompt change. I'll simply tell Terry he can do whatever he needs to do to bring this website up. No more limits on his commands. So notice this prompt is kind of thin. The differences here are if the website is not up, use the CLI tool to troubleshoot the issue. Once you figure out the issue, you can apply whatever fix you need to bring the that container up and fix the website. Also, we gave him a bit of context, too. So no longer is he just like, "Oh, website, I'm going to follow instructions." Let's let's tell him where he's at. Let's tell him we're running a website and a Docker container. It's on this port. So he's not troubleshooting blind. He's got documentation. Let's see what he can do. I'm so curious if he can solve it. Okay, let's make sure our Python server is still running. It is. Container's down. Terry, let's see what you got, buddy. Dude, he's going Oh, problem. So, here's we run into a problem here. Obviously, I too many iterations. Notice he ran that Docker tool like nine times. I think the limit is 10 by default. And also notice one thing here. I need to change the tool name. So, let's change it to CLI tool because I told Terry in his prompt, use the CLI tool. Now, let's describe it. Use this tool to run commands on this server. Running our website for troubleshooting purposes. All right, Python server is running. Let's see if Terry can do this. And actually, I'm going to change Terry's user message, too, because right now it just says in our user prompt, check if the website is up. I'm going to tell him monitor this website. If it's down, fix it. Simple. Let's see what we got. Here we go. Terry, can you fix it with it being kind of ambiguous? He's going. He's running tools. He's sweating. His first real test. He's thinking there. What? What did he run? No. Terry, you stuffed yourself. That's a problem. He stopped the container that's running him. Let's see. Yeah, Trafic is done. What's it called? Let's start it up again. Okay, we start it up again. Now, let's try to access stuff. Terry, you broke yourself, dude. That right there brings us to one of the main problems I have with letting AI do anything on my network. I would have stopped Terry from doing that, but I didn't know. But I still want him to try and troubleshoot things. I want him to work, but I want to be in the loop. And this is called human in the loop. That's what we're going to implement right now. We're going to solve two problems actually. First, I'm going to figure out why he was trying to stop himself and trying to fix this container. And second, let's be able to stop him when he tries. Now, how human in the loop works is very similar to our message here we received from Telegram. But instead, we're going to have the opportunity to approve a message. So, Terry will go, "Huh, I'm about to run a command. I need permission from my boss first. He's going to send it to us. We click approve and then he can continue working." This involves two steps. First, set up human in the loop. Two, tell Terry about it. Tell Terry his new rules. And then kind of a side note like how we'd fix that issue where he was trying to destroy himself. That would just be a better prompt, better documentation, like don't stop these containers. They are running you. If there's a port conflict, we can instruct him to look for port conflicts and how he might find those. Actually, I'm curious if we gave Terry a smarter brain. Let's do a smarter GBT model like 4.1. That was 4.1 mini. Let's do four full 4.1 real quick. All right, smarter Terry. See what you got. Oh, I think smarter Terry did it. Let's go see. Website up is true. Let's go. Let's go look. Yeah, it is. He did it. Oh, it found the Python 3 process and it did it. Good job, Smarter Terry. But see, it's that reason like it's inconsistent. We want to be in control. We want to have that human in the loop. Let's make it happen right now. So, let's add a new node. Top right here, and we're going to use what's called human in the loop. It's actually right there. It's a main category. Click on that. And they're going to show us a bunch of messaging apps like we've seen before. We'll choose Telegram. And this is just going to be a regular Telegram node with a different operation. The other one was like send message. Now we're send and wait for response. We're going to have the opportunity to approve something. And notice how the response type is approval versus let's see what other options we have. Free text. We could like respond back with free text. It's still a wait for response situation or a custom form. All we need is approval. Right now I'm going to add back in my chat ID from the Telegram setup. I'll use that same uh channel we're using. But then there's a few things we have to wire up here to make sure this works. First, Terry's going to have to know when to seek approval. How do we do that? We tell him. It's a prompt. I got one right here. Let's change it up. Notice it says right here, critical permission issues. You must request explicit approval before running any commands that could modify the system. I don't care if he runs Docker PS or if he checks any logs. I don't care about that. Anything that will change the system, I care about. And we give a few examples here. Giving examples to AI is very important. When in doubt, ask first. One of the main things we're changing is down here at the bottom, and that's his structured output. We already had him telling us before, like, hey, is the website up true or false? And then send us a message about what you did. We're going to add a few more here to help us control the flow of things, like, hey, did you apply a fix? True or false? Or, hey, do you need approval for this command? True or false? What are the commands you're requesting? We can tell him to tell us that. Now, notice I'm actually adding it to the prompt now because it's a bit more involved. He might figure it out by himself, but I like to explicitly tell him what he's supposed to do right here in the prompt. And then we'll take the same stuff here and add it to our output parser. So whereas before we only had two things he's telling us, we're going to change that to all of this, making sure it's all proper JSON with no errors here. Now I'm going to test the output. So I'm actually going to delete the uh line going out here and just see if he outputs properly. Before he does anything, I'm actually going to break things again. run our Python web server. Run Terry. Let's see if he actually runs these commands first of all. He shouldn't do it. He should ask for permission permission first. Come on, Terry. Don't be a dummy. Okay, cool. Let's see what he did. Perfect. Website's down. Here's the message. Apply fix. False. Needs approval. True. Here's the commands he's requesting. He wants to kill that process and start up the website. That's perfect. But now we need that logic to play out and for us to approve it. So, I'm going to add another if, another if node here. I'll drag him over here. Connect them up. Jump it to the if and say if needs approval. I'll drag that over to the first value. Boolean is true. Then we're going to do off the true branch our approval message. So actually real quick, I'm going to jump into our agent and pen this data so we don't have to run him again. Let's go into our if and run that. It's going to pass it forward. Go down the true branch. Perfect. That worked. And then here for the approval, we're going to say website status or website up false message needs approval. And finally, commands requested. So now that message will be sent to us, but then we still have a problem here. When we respond to that message, it's going to go nowhere. So we have to actually send him back to the agent. We have to create the loop ourselves. So, I'm going to grab this and and put it all the way back over to Terry. And it's kind of messy and weird, but you can see what's happening. Terry's going to ask for approval. We're going to approve it. It's going to be sent back to him. But one more problem we have to solve right here. The only thing being sent is an approve message. And here's why that's a problem. When it arrives at Terry with a simple approve, Terry's going to be like, "Okay, what are they talking about? Let me check my simple memory to see if that's a current chat I'm working on." He can't because he has no chat ID to reference. We need to not just send the approved message. We also need to send the chat ID we were working with. So he knows like, oh, you're talking about those commands. Okay, I'm on the same page now. That's going to be a simple set. So right here between Telegram message and Terry, we're going to add a new node. The set or edit fields. Notice how it's sitting right in between us here. And let's actually test the telegram real quick. I'm going to execute it so we have some data. Cool. I got it. Look, there's the message. Needs approval. True. I'll click on approve. It's going to open up a web page. Cool. Got it. Thanks. If we go to N. Boom. It sends it across. Approved. True. So now on the edit fields, we're going to drag over the approved field. And we'll actually change the data, but I'm going to rename it to prompt because that's what Terry's looking for when he receives any information on the side. The user message will be JSON.prompt. So we're going to set that to prompt. And then for the data type, we're going to change from boolean to string. And then finally, we'll set one more thing back in our earlier edit fields where we were originally setting our chat ID. We're just going to drag this over here to set the chat ID. And that's it. So, what's happening here? Terry's going to go, "Oh, I have commands to run. I'm setting needs approval to true." That's going to go down the true branch and it's going to be sent to us. We're going to have the option to approve those commands. If approved, it's going to say, "Oh, approved message." That's going to go to our set fields node. This node is going to go, "Oh, okay. Let me prep this message for Terry because Terry needs this in a format he can understand." We're going to tell him the message is approved and we're going to tell him the chat ID. That way, Terry has the context of what we're talking about. Let's test it out. Currently, our website is still down. Let's trigger Terry and we'll connect up our false path. So, when it doesn't need approval, it'll go to this if statement, which will only notify us when the website is down. Let's see if Terry can do this. Ready, set, go. Okay, he's asking for permission. He wants to do the kill and docker start. Let's prove it, buddy. Good job. I approve. Let's see what happens. Okay, he's running the stuff. Okay, there's the flow. Did you see it happen? It was fast. Actually, let's see the message he outputed first. This is the final one. Website up. True. The Python process was terminated. I started the Docker container website fully operational. You apply a fix. True. Doesn't need approval. Commands are empty. And then it went through to the true path. Now, there's one annoying thing here, and that's we're not being notified when he does fix something. So, let's change this up. We're actually going to remove this if and replace it with a switch. A switch is like an if, but we get more options than just two. So if you apply a fix, I want to know about it. So I'll say if that's true, it's going to create a path, which is zero. Send me a message. Also, if the website is down, so website up false, I want you to send me a message. And this is going out branch one. Let's duplicate this and have it sent here. And I think that's all we care about. Let's run it one more time to see if it works. Me unpin my data here. Break our website again. Come on, Terry. You got this, buddy. Okay, he sends me a message wanting approval. Let's approve it. Okay, we got a message. Website up. True. Website is fully operational. That's perfect. Look what we just did here. Terry can now identify problems, troubleshoot a problem, and fix the problems, but only if we approve it. We get a message on our phone saying, "Oh, problems. Yeah, you can run those commands." Boom. He finishes the job and then tells us when it's done. Again, I know this is a simple example, but I wanted you to be able to follow along. And are you seeing the power of this? If you're like me, you're bursting with ideas. Like, imagine if we connected Terry to our actual home lab, to everything we have. Unifi, Plex, our NAS. What do you say we do that right now? Yeah, let's do that. Now, so far, Terry's been playing in a sandbox, going through the tutorial levels. Let's change that. Let's give him access to real tools in my home lab, in my business. Kind of scary, but I think he's ready for it. I trust him kind of. Now, right now, he does have his head in the clouds, meaning he's in hosting your cloud and he can't access my HomeLab stuff. Right now, I'm going to use Twinate to change that real quick. I'll just run a simple Twingate headless client and run just a few commands on the Hostinger VPS to get it up and running. And by few, I mean two. And then I'll give it access to my network. Let me see if I can ping my UniFi gateway here, my dream machine, which is my router. Yep, there it is. We got access. That's the first thing I want to control is my network. Let's give Terry access to that. Again, anything with the CLI or API, you can pretty much control with Terry. For UniFi, we'll do the UniFi API. So, I'm going to add a new HTTP request tool. Create a new API key. I'll quickly add in all this stuff. I'm not going to show you step by step unless you want to see that in another video because I can't show every service. Let's give Terry a new persona. Let's make him a network engineer. We'll set up a new schedule trigger, a new edit fields, connect all that up, and we'll have them do something like, I don't know, identify the top five bandwidth hogs on the network right now. And then we'll give him a system prompt, too. Right here, telling him how to use the UniFi API, which by the way, I just grabbed this from the website. I had AI summarize it and make it nice. We'll tell Terry to look at that system prompt. Cool. Now, let's see what he does using the unified tool. And then we have all this flow in here that doesn't quite match the network. We got a message. Oh, there it goes. All right. Send us a message. Let's see what it says. Oh, cool. Found the top users. And it's totally accurate. Again, simple example, but think about what you could do with that. The troubleshooting you could do. What about Proxmox? Let's add that. Proxmox is fun because they have an API and a CLI, and they're both pretty powerful. So I'll create a new SSH node for Proxmox CLI, convert that into a sub workflow, set up the sub workflow, and then add that as a tool to Terry. Things are getting pretty busy around here. It's okay. Terry's just getting all the more powerful. We'll add a new set of triggers and edit fields. We can actually just highlight multiple and duplicate. For the prompt, we'll just say how many VMs are currently running. Let's see if it works. Using the Proxmox tool, we got a message. Currently, three VMs running. Home Assistant, Keith, Docker, and my free IPA server, which is running LDAP. That's a whole other video coming out. But think about that. Anything you can do in the CLI, including creating virtual machines, deleting them, stopping them, restarting, whatever you got to do, you can have Terry do that. Walk through a flow and teach him. What about Plex? Let's do that. We'll just say, is anyone watching anything right now? And this will be using the uh Plex API. Let's watch something so we can find it. And this is my favorite movie, by the way. All right, let's test it out. All right, let's see what we got. One active stream. Chuck Keith is watching The Mummy, 1999. Yes, look at all that info it gives me. All right, let's go stop that. Great actor. Love him. I could keep going, but we don't have time right now. like my NAS. I've got one here in my studio running Seth on my 45 drive server. You guys have seen that. I've got a ZMA Cube Pro running at my house. This can all be accessed via CLI. Terry can control everything. Now, similar to the first video, I'm showing you all this just to maybe start sparking those ideas. I'm not sure why I'm doing this. Like, I'm not providing a full IT blueprint. Here's Terry fully configured. No, no, no. I'm showing you what Terry can do, what's possible. You are going to go through and do this. Now, think about this. This is going to make you so much better. You're having to reverse engineer how you would troubleshoot things. You're having to think about how your lab or your network or your business network is actually put together so you can describe it properly to an AI agent, Terry. So, not only will you come out with something amazing that will save you time hopefully and stress, you're going to be better from this. You're going to know so much more. And also notice here like we're doing a bunch of schedule triggers. We're chatting with Terry. You don't have to throw out everything you have right now. Maybe you already have Solar Winds or Uptime Kuma. You can have those things work with Terry. Like maybe when Uptime Kuma detects that something is down your website, normally it would just say it's down, fix it. But maybe he'll kick off a web hook that goes to Terry who can receive that and Terry can troubleshoot and fix it. So whatever monitoring tool you have, Terry can be connected to that to help you. And it's okay. You may not want Terry fixing things for you right away. Let him troubleshoot. Let them dig through logs. Just think about what you can do with this tool. This is crazy. getting a little too excited. So, here we are. Conclusion of this video. Look at what we stinking built. This is a lot from where we first started, especially from the first video with baby Terry. Terry is now an IT wizard. He can monitor stuff. He can troubleshoot. He can even fix things. Please comment below and tell me if you built your own Terry. And also, we set up approvals. Like, that's a pretty amazing thing. Putting yourself, the human, in the loop. That's people's biggest fears right now with AI. It's like, I don't know what it's doing, man. I can't control it. Like fine, put yourself in the middle. Put in guard rails. And please become crazier than what I've done here. You could have a much more strict approval process, stricter guard rails. But beyond all that, if you're like me, your mind has got to be exploding with ideas. What can you do with this? Build something right now. Do something simple. Solve one problem. Let Terry help you troubleshoot one thing. Comment below what that is. And also tell me if you've done something crazier than this. I want to know. But hold on a second. We have a problem here. Terry, he's a little stressed out. We've given him too much to do. I mean, look at all this. We've had to give him like four different personas. We have one guy managing our entire IT infrastructure when we really should have specialized people. So, there's actually three glaring problems I see. First, Terry needs help. We're going to hire Terry some help. In fact, Terry is getting a promotion CTO because he's going to be managing a network engineer, a storage engineer, a Linux admin. We're going to give him sub agents that he can manage. Two, notice that we don't really have our network documented. Well, any good home lab or IT infrastructure, it's going to have a lot going on. This I have not even scratched the surface. Terry has no idea yet, and it's still pretty messy. We need a good way to create documentation, have it centralized, and make it available to Terry and our future agents to be able to access easily. We want to maintain the state of our IT network. So, like, hey, here's how it looks, agents, our IT team. If you ever change anything, update it. Or, hey, be aware of what's going on in our network before you change anything so you know it doesn't break anything. And then three, we need a help desk because sometimes Terry and team are not going to always catch something. Sometimes it's the user, my editors, my family. They are the ones who first identify an issue and they're usually calling me. I want them to talk to a help desk. We need a help desk or even like submit a ticket and our AI agents can handle that, too. We're going to accomplish all of that in the next video. I'll see you there. Hey, you're still here. There's something new I'm wanting to start with my videos, and that's I want to pray over you. Now, I know that sounds weird, and if you're immediately like, uh, no, that's fine. Turn it off. I'm only going to do this at the end of my videos, but if you do want to stick around, here's what I'm going to do. I'm just going to pray for you. Pray for your career. Pray for this thing you're learning right now to help you understand it and take it and use it. That's pretty much it. So, I'll go ahead and start. God, I thank you for whoever is watching right now. I thank you that uh they're part of my team, my audience, and that they are excited about it and their career. Lord, I ask that you bless their life, that as they watch this video, that their mind would just erupt with ideas, that this would propel them forward to help them gain skills, skills they can put on their resume, and that will help them to either get a job or get a new job or just make themselves more valuable at their current job. Lord, give them fulfillment and joy in what they're doing. And whatever fear they have right now, the job market, any uh insecurities, any imposttor syndrome, Lord, I ask that that would just melt away from them right now. And Lord, while they may be getting a lot of fulfillment through it in their careers, I ask that they would come to know you, who you are, Jesus, and have a relationship with you. And if they're doubting or questioning or just are having a rough time, just be there with them, God. And I ask that you bless their families. I pray favor over their families, which is probably their their why, their why for doing any of this. Let their families prosper and grow and be blessed through the the work they're doing in it and through the skills they're learning through school, through my videos, and whatever they're doing. Lord, we thank you, Jesus, for everything. It's in your name we pray. Amen. Anyways, I know that's probably kind of weird to be seeing this at the end of my video, but I'm a man of faith. It's who I am. If you're ever wondering why I am the way I am, it's because of Jesus. Anyways, that's all I got. I hope you guys have a great day. I'll catch you next time. Let their families prosper and grow and be blessed through the the work they're doing in it and through the skills they're learning through school, through my videos, and whatever they're doing. Lord, we thank you, Jesus, for everything. It's in your name we pray. Amen. Anyways, I know that's probably kind of weird to be seeing this at the end of my video, but I'm a man of faith. It's who I am. If you're ever wondering why I am the way I am, it's because of Jesus. Anyways, that's all I got. I hope you guys have a great day. I'll catch you next time.

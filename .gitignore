@@ -1,0 +1,24 @@
+# Environment and secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Build artifacts / logs / backups
+logs/
+backups/
+cache/
+data/
+exports/
+*.db
+*.log
+
+# Local archives
+recipe-labs-leadgen.zip
+
+# OS clutter
+.DS_Store

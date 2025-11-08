@@ -1,0 +1,88 @@
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║     🚀 QUICK PRODUCTION SETUP - 5 MINUTES                     ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+STEP 1: ADD ENVIRONMENT VARIABLES TO VERCEL
+─────────────────────────────────────────────
+
+In Vercel → Settings → Environment Variables:
+
+1. Click "Import .env" button
+2. Upload: aisim-vercel.env (from Downloads)
+3. Select: Production ✅
+4. Click: Import
+
+OR add these manually (one by one):
+
+VITE_CLERK_PUBLISHABLE_KEY=pk_live_LmNsZXJrLmFjY291bnRzLmRldiQ
+VITE_SUPABASE_URL=https://fqsuryapcypscpysaemh.supabase.co
+VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZxc3VyeWFwY3lwc2NweXNhZW1oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAwNzU1MjksImV4cCI6MjA3NTY1MTUyOX0.ErtYzn5jZVdE6ab4zU_lLZy30wb6xWgWYMrgIOE0p2c
+VITE_STRIPE_PUBLISHABLE_KEY=pk_test_51SGfn5B3und2NTG379cxoEZHKtV2yAH7rkDRSyRYtZ63MBKHSoigxJ1I8AjgkkJf6izlsfNK790OFGmBwdBD90lx00f6JfyVJn
+
+(Make sure to select "Production" for each!)
+
+
+STEP 2: GET YOUR VERCEL URL
+────────────────────────────
+
+In Vercel → Domains tab:
+Copy your URL (e.g., ai-sim.vercel.app)
+
+
+STEP 3: CONFIGURE CLERK
+────────────────────────
+
+A) Add Domain:
+   1. Go to: dashboard.clerk.com
+   2. Configure → Domains
+   3. Add: [YOUR VERCEL URL]
+   4. Save
+
+B) Add Redirect URLs:
+   1. Configure → Paths (or Redirect URLs)
+   2. Add these (replace with YOUR URL):
+      
+      https://[YOUR-VERCEL-URL]
+      https://[YOUR-VERCEL-URL]/
+      https://[YOUR-VERCEL-URL]/*
+
+   3. Save
+
+C) Enable Google:
+   1. Configure → SSO Connections
+   2. Find: Google
+   3. Toggle: ON ✅
+   4. Save
+
+
+STEP 4: REDEPLOY
+─────────────────
+
+In Vercel → Deployments:
+1. Click ⋯ on latest deployment
+2. Click "Redeploy"
+3. Check "Clear build cache"
+4. Click Redeploy
+5. Wait ~2 minutes
+
+
+STEP 5: TEST!
+──────────────
+
+1. Visit your Vercel URL
+2. Click "Get Started for Free"
+3. Try signing in with Google ✅
+4. Try Stripe checkout ✅
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ WHAT WORKS:
+   • Google sign-in (Clerk handles everything!)
+   • User data saves to Supabase
+   • Stripe checkout (test mode)
+   • Analytics tracking
+
+🎉 DONE IN 5 MINUTES!
+

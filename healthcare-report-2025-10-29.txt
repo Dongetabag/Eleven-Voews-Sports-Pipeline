@@ -1,0 +1,48 @@
+INCIDENT REPORT
+Date: 10/29/2025
+Time: 12:08:35 AM
+Reported by: [Your Name]
+Department: [Department]
+
+INCIDENT DETAILS:
+- Type of Incident: 
+- Location: 
+- Patient(s) Involved: 
+- Staff Involved: 
+- Witnesses: 
+
+DESCRIPTION OF INCIDENT:
+[Detailed description of what happened]
+
+IMMEDIATE ACTIONS TAKEN:
+- Patient Assessment: 
+- Medical Interventions: 
+- Notifications Made: 
+- Documentation: 
+
+PATIENT OUTCOME:
+- Condition: 
+- Injuries Sustained: 
+- Treatment Provided: 
+- Current Status: 
+
+ROOT CAUSE ANALYSIS:
+- Contributing Factors: 
+- Equipment Issues: 
+- Environmental Factors: 
+- Human Factors: 
+
+PREVENTIVE MEASURES:
+- Immediate Actions: 
+- Long-term Solutions: 
+- Policy Changes Needed: 
+- Training Required: 
+
+FOLLOW-UP:
+- Investigation Status: 
+- Additional Documentation: 
+- Notifications Pending: 
+
+SIGNATURES:
+- Reporting Nurse: _________________ Date: _______
+- Supervisor: _________________ Date: _______

@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  leadgen:
+    build: .
+    container_name: recipe-labs-leadgen
+    ports:
+      - "5000:5000"
+    environment:
+      - APIFY_API_TOKEN=${APIFY_API_TOKEN}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - API_MASTER_KEY=${API_MASTER_KEY}
+      - FLASK_ENV=production
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./cache:/app/cache
+      - ./exports:/app/exports
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:5000/api/v1/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+
+
+
+
+

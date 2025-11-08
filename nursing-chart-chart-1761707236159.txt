@@ -1,0 +1,116 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║              AISIM NURSING ASSISTANT - CLINICAL CHART            ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+CHART INFORMATION
+─────────────────────────────────────────────────────────────────────
+Generated:     Tuesday, October 28, 2025 at 11:07 PM
+Chart ID:      chart-1761707236159
+Chart Type:    ASSESSMENT ASSESSMENT
+Patient:       Jane
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║                      NURSING ASSESSMENT                          ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+COMPREHENSIVE NURSING ASSESSMENT
+
+Patient: Jane
+Age: 23 years
+Gender: male
+Room: 223
+Admission Date: Not specified
+Primary Diagnosis: head hurts 
+
+VITAL SIGNS:
+Not documented
+
+ASSESSMENT FINDINGS:
+Chief Complaint: head hurts
+Symptoms: 
+Physical Findings: Not documented
+Mental Status: Not documented
+Mobility: Not documented
+Skin Condition: Not documented
+
+INTERVENTIONS PROVIDED:
+None documented
+
+ADDITIONAL OBSERVATIONS:
+None documented
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║                      NURSING DIAGNOSES                           ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+  1. Impaired Gas Exchange related to respiratory condition
+
+  2. Risk for Infection related to compromised immune system
+
+  3. Acute Pain related to physical condition
+
+  4. Knowledge Deficit related to treatment plan
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║                    NURSING INTERVENTIONS                         ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+  1. Monitor vital signs every 4 hours
+
+  2. Assess pain level using 0-10 scale
+
+  3. Provide comfort measures as needed
+
+  4. Educate patient on condition and treatment
+
+  5. Implement fall prevention measures
+
+  6. Document all assessments and interventions
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║                    EVALUATION & OUTCOMES                         ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+Patient response to interventions will be evaluated based on:
+- Vital signs stability
+- Pain level reduction
+- Understanding of treatment plan
+- Ability to perform self-care activities
+- Overall condition improvement
+
+Expected outcomes include improved comfort, understanding, and condition management.
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║                  DOCUMENTATION STANDARDS                         ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+All assessments, interventions, and patient responses have been documented according to nursing standards. Chart includes comprehensive patient data, nursing diagnoses, interventions, and evaluation criteria. Documentation meets regulatory compliance requirements for legal protection and quality assurance.
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║                    COMPLIANCE VERIFICATION                       ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+This chart meets the following compliance standards:
+- HIPAA: Patient confidentiality maintained
+- Joint Commission: Standardized terminology used
+- CMS: Medical necessity documented
+- State Board of Nursing: Professional standards followed
+
+
+╔═══════════════════════════════════════════════════════════════════╗
+║                        CHART SUMMARY                             ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+Comprehensive nursing assessment completed for Jane. Patient presents with head hurts. Assessment findings documented with appropriate nursing diagnoses and interventions identified. Care plan established with evaluation criteria. All documentation completed per nursing standards and regulatory requirements.
+
+
+─────────────────────────────────────────────────────────────────────
+                    AISim Nursing Assistant
+           AI-Powered Clinical Documentation System
+─────────────────────────────────────────────────────────────────────

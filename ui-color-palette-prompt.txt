@@ -1,0 +1,25 @@
+UI COLOR PALETTE PROMPT FOR GOOGLE AI
+========================================
+
+Create a user interface using the following soft pastel color palette:
+
+PRIMARY COLORS:
+- Soft blush pink (#F4D7E0 / rgb(244, 215, 224)) - Use for main background sections and primary UI elements
+- Light lavender purple (#C8B5E0 / rgb(200, 181, 224)) - Use for secondary sections, cards, and accent areas
+- Pale cream beige (#F5EFE9 / rgb(245, 239, 233)) - Use for subtle background variations and neutral spaces
+
+DESIGN CHARACTERISTICS:
+- Incorporate smooth, organic curved shapes and flowing transitions between color sections
+- Use soft gradients blending between the pink and lavender tones
+- Maintain a dreamy, calm, and welcoming aesthetic
+- Apply gentle shadows and soft edges throughout the design
+- Keep contrast low and subtle for a cohesive, harmonious appearance
+- Consider wave-like or cloud-like dividers between sections
+
+STYLE KEYWORDS:
+Pastel, soft, gentle, organic, flowing, dreamy, minimal, feminine, calming, modern
+
+USAGE NOTES:
+- These colors work best for wellness, beauty, lifestyle, or creative applications
+- Consider adding white (#FFFFFF) for text and important UI elements to ensure readability
+- For interactive elements, consider slightly deeper versions of these colors for hover states

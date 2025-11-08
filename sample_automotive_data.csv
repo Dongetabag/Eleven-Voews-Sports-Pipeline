@@ -1,0 +1,22 @@
+Vehicle,Year,Make,Model,Price,Mileage,Condition,Location,Profit_Margin
+2020_Porsche_911,2020,Porsche,911 Carrera,89500,12000,Excellent,Los Angeles,15.5
+2019_BMW_M5,2019,BMW,M5 Competition,72000,18500,Excellent,Miami,12.3
+2021_Mercedes_AMG,2021,Mercedes-Benz,AMG GT,105000,8200,Mint,New York,18.2
+2018_Audi_R8,2018,Audi,R8 V10,98000,22000,Very Good,Chicago,10.8
+2020_Lamborghini_Huracan,2020,Lamborghini,Huracan EVO,215000,5500,Mint,Beverly Hills,22.5
+2019_Ferrari_488,2019,Ferrari,488 GTB,245000,7800,Excellent,Newport Beach,19.7
+2021_McLaren_720S,2021,McLaren,720S,285000,3200,Mint,San Francisco,25.3
+2018_Porsche_Cayenne,2018,Porsche,Cayenne Turbo,68000,35000,Good,Austin,8.5
+2020_Range_Rover,2020,Land Rover,Range Rover Sport,75000,28000,Very Good,Dallas,11.2
+2019_Bentley_Continental,2019,Bentley,Continental GT,165000,15000,Excellent,Las Vegas,16.8
+2021_Rolls_Royce_Ghost,2021,Rolls-Royce,Ghost,315000,2800,Mint,Monaco,28.9
+2018_Maserati_Ghibli,2018,Maserati,Ghibli S,52000,42000,Good,Phoenix,7.3
+2020_Tesla_Model_S,2020,Tesla,Model S Plaid,88000,25000,Very Good,Seattle,9.8
+2019_Aston_Martin_Vantage,2019,Aston Martin,Vantage,115000,18000,Excellent,Miami Beach,14.5
+2021_Porsche_Taycan,2021,Porsche,Taycan Turbo S,145000,12000,Mint,San Diego,17.6
+
+
+
+
+
+

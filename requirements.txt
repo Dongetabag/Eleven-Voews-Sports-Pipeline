@@ -1,0 +1,41 @@
+# Recipe Labs Lead Generation - Python Dependencies
+
+# Core scraping & AI
+apify-client==1.7.0
+google-generativeai==0.8.3
+
+# Web framework
+flask==3.0.0
+flask-cors==4.0.0
+flask-limiter==3.5.0
+gunicorn==21.2.0
+
+# Data handling
+pandas==2.1.4
+openpyxl==3.1.2
+
+# Environment & utilities
+python-dotenv==1.0.0
+schedule==1.2.0
+requests==2.31.0
+
+# Security & Auth
+cryptography==41.0.7
+bcrypt==4.1.2
+python-jose[cryptography]==3.3.0
+
+# Monitoring & Performance
+psutil==5.9.6
+
+# Optional: CRM integrations (install as needed)
+hubspot-api-client==8.3.0
+# salesforce-simple-salesforce==1.12.4
+
+# Optional: Email services (install as needed)
+# sendgrid==6.11.0
+# mailgun3==1.0.1
+
+# Development tools (optional)
+# pytest==7.4.3
+# black==23.12.1
+# mypy==1.7.1

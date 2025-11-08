@@ -1,0 +1,235 @@
+2025-10-26 14:36:57.187 | INFO     | __main__:__init__:24 - ================================================================================
+2025-10-26 14:36:57.187 | INFO     | __main__:__init__:25 - 🤖 AI ARBITRAGE SYSTEM - DEMO MODE
+2025-10-26 14:36:57.187 | INFO     | __main__:__init__:26 - ================================================================================
+2025-10-26 14:36:57.187 | INFO     | __main__:__init__:27 - Running in DEMO mode to show capabilities
+2025-10-26 14:36:57.187 | INFO     | __main__:__init__:28 - Add API keys in .env to run in PRODUCTION mode
+2025-10-26 14:36:57.187 | INFO     | __main__:__init__:29 - ================================================================================
+2025-10-26 14:36:57.187 | INFO     | __main__:demo_workflow:83 - 
+🔍 PHASE 1: MARKET SCANNING
+2025-10-26 14:36:57.187 | INFO     | __main__:demo_workflow:84 - Scanning marketplaces for opportunities...
+2025-10-26 14:36:59.188 | INFO     | __main__:demo_workflow:90 -   📊 Scanning books...
+2025-10-26 14:37:00.189 | INFO     | __main__:demo_analyze_opportunity:109 - 
+🤖 Analyzing: Calculus Early Transcendentals 10th Ed
+2025-10-26 14:37:00.690 | INFO     | __main__:demo_analyze_opportunity:113 -   💰 Buy Price: $45.00
+2025-10-26 14:37:00.690 | INFO     | __main__:demo_analyze_opportunity:114 -   📈 Sell Price: $89.99
+2025-10-26 14:37:00.690 | INFO     | __main__:demo_analyze_opportunity:115 -   💵 Estimated Profit: $27.99
+2025-10-26 14:37:00.690 | INFO     | __main__:demo_analyze_opportunity:116 -   📊 Profit Margin: 31.1%
+2025-10-26 14:37:00.690 | INFO     | __main__:demo_analyze_opportunity:117 -   🏪 Source: OfferUp
+2025-10-26 14:37:00.690 | INFO     | __main__:demo_analyze_opportunity:118 -   ⭐ Seller Rating: 4.8/5.0
+2025-10-26 14:37:00.690 | INFO     | __main__:demo_analyze_opportunity:124 -   ✅ AI Decision: PURCHASE (Confidence: 92%)
+2025-10-26 14:37:00.690 | INFO     | __main__:demo_analyze_opportunity:125 -   🎯 Action: Execute purchase immediately!
+2025-10-26 14:37:00.691 | INFO     | __main__:demo_purchase:154 -   💳 Processing purchase...
+2025-10-26 14:37:01.692 | INFO     | __main__:demo_purchase:156 -   ✅ Purchase completed: $45.00
+2025-10-26 14:37:02.193 | INFO     | __main__:demo_purchase:163 -   📝 Creating Amazon listing...
+2025-10-26 14:37:03.194 | INFO     | __main__:demo_purchase:165 -   ✅ Listed on Amazon FBA: $89.99
+2025-10-26 14:37:03.194 | INFO     | __main__:demo_purchase:166 -   🎯 Expected profit when sold: $27.99
+2025-10-26 14:37:03.194 | INFO     | __main__:demo_analyze_opportunity:109 - 
+🤖 Analyzing: Calculus Early Transcendentals 10th Ed
+2025-10-26 14:37:03.696 | INFO     | __main__:demo_analyze_opportunity:113 -   💰 Buy Price: $45.00
+2025-10-26 14:37:03.696 | INFO     | __main__:demo_analyze_opportunity:114 -   📈 Sell Price: $89.99
+2025-10-26 14:37:03.696 | INFO     | __main__:demo_analyze_opportunity:115 -   💵 Estimated Profit: $27.99
+2025-10-26 14:37:03.696 | INFO     | __main__:demo_analyze_opportunity:116 -   📊 Profit Margin: 31.1%
+2025-10-26 14:37:03.697 | INFO     | __main__:demo_analyze_opportunity:117 -   🏪 Source: Craigslist
+2025-10-26 14:37:03.697 | INFO     | __main__:demo_analyze_opportunity:118 -   ⭐ Seller Rating: 4.8/5.0
+2025-10-26 14:37:03.697 | INFO     | __main__:demo_analyze_opportunity:124 -   ✅ AI Decision: PURCHASE (Confidence: 92%)
+2025-10-26 14:37:03.697 | INFO     | __main__:demo_analyze_opportunity:125 -   🎯 Action: Execute purchase immediately!
+2025-10-26 14:37:03.697 | INFO     | __main__:demo_purchase:154 -   💳 Processing purchase...
+2025-10-26 14:37:04.698 | INFO     | __main__:demo_purchase:156 -   ✅ Purchase completed: $45.00
+2025-10-26 14:37:05.200 | INFO     | __main__:demo_purchase:163 -   📝 Creating Amazon listing...
+2025-10-26 14:37:06.200 | INFO     | __main__:demo_purchase:165 -   ✅ Listed on Amazon FBA: $89.99
+2025-10-26 14:37:06.200 | INFO     | __main__:demo_purchase:166 -   🎯 Expected profit when sold: $27.99
+2025-10-26 14:37:06.200 | INFO     | __main__:demo_analyze_opportunity:109 - 
+🤖 Analyzing: Organic Chemistry 8th Edition
+2025-10-26 14:37:06.702 | INFO     | __main__:demo_analyze_opportunity:113 -   💰 Buy Price: $38.00
+2025-10-26 14:37:06.702 | INFO     | __main__:demo_analyze_opportunity:114 -   📈 Sell Price: $125.00
+2025-10-26 14:37:06.702 | INFO     | __main__:demo_analyze_opportunity:115 -   💵 Estimated Profit: $64.75
+2025-10-26 14:37:06.702 | INFO     | __main__:demo_analyze_opportunity:116 -   📊 Profit Margin: 51.8%
+2025-10-26 14:37:06.702 | INFO     | __main__:demo_analyze_opportunity:117 -   🏪 Source: Craigslist
+2025-10-26 14:37:06.702 | INFO     | __main__:demo_analyze_opportunity:118 -   ⭐ Seller Rating: 4.3/5.0
+2025-10-26 14:37:06.702 | INFO     | __main__:demo_analyze_opportunity:124 -   ✅ AI Decision: PURCHASE (Confidence: 92%)
+2025-10-26 14:37:06.702 | INFO     | __main__:demo_analyze_opportunity:125 -   🎯 Action: Execute purchase immediately!
+2025-10-26 14:37:06.702 | INFO     | __main__:demo_purchase:154 -   💳 Processing purchase...
+2025-10-26 14:37:07.704 | INFO     | __main__:demo_purchase:156 -   ✅ Purchase completed: $38.00
+2025-10-26 14:37:08.205 | INFO     | __main__:demo_purchase:163 -   📝 Creating Amazon listing...
+2025-10-26 14:37:09.206 | INFO     | __main__:demo_purchase:165 -   ✅ Listed on Amazon FBA: $125.00
+2025-10-26 14:37:09.207 | INFO     | __main__:demo_purchase:166 -   🎯 Expected profit when sold: $64.75
+2025-10-26 14:37:09.207 | INFO     | __main__:demo_analyze_opportunity:109 - 
+🤖 Analyzing: Organic Chemistry 8th Edition
+2025-10-26 14:37:09.707 | INFO     | __main__:demo_analyze_opportunity:113 -   💰 Buy Price: $38.00
+2025-10-26 14:37:09.707 | INFO     | __main__:demo_analyze_opportunity:114 -   📈 Sell Price: $125.00
+2025-10-26 14:37:09.707 | INFO     | __main__:demo_analyze_opportunity:115 -   💵 Estimated Profit: $64.75
+2025-10-26 14:37:09.707 | INFO     | __main__:demo_analyze_opportunity:116 -   📊 Profit Margin: 51.8%
+2025-10-26 14:37:09.708 | INFO     | __main__:demo_analyze_opportunity:117 -   🏪 Source: Facebook Marketplace
+2025-10-26 14:37:09.708 | INFO     | __main__:demo_analyze_opportunity:118 -   ⭐ Seller Rating: 4.2/5.0
+2025-10-26 14:37:09.708 | INFO     | __main__:demo_analyze_opportunity:124 -   ✅ AI Decision: PURCHASE (Confidence: 92%)
+2025-10-26 14:37:09.708 | INFO     | __main__:demo_analyze_opportunity:125 -   🎯 Action: Execute purchase immediately!
+2025-10-26 14:37:09.708 | INFO     | __main__:demo_purchase:154 -   💳 Processing purchase...
+2025-10-26 14:37:10.709 | INFO     | __main__:demo_purchase:156 -   ✅ Purchase completed: $38.00
+2025-10-26 14:37:11.210 | INFO     | __main__:demo_purchase:163 -   📝 Creating Amazon listing...
+2025-10-26 14:37:12.212 | INFO     | __main__:demo_purchase:165 -   ✅ Listed on Amazon FBA: $125.00
+2025-10-26 14:37:12.212 | INFO     | __main__:demo_purchase:166 -   🎯 Expected profit when sold: $64.75
+2025-10-26 14:37:12.212 | INFO     | __main__:demo_workflow:90 -   📊 Scanning video_games...
+2025-10-26 14:37:13.213 | INFO     | __main__:demo_analyze_opportunity:109 - 
+🤖 Analyzing: PS5 Games Bundle - Sealed
+2025-10-26 14:37:13.714 | INFO     | __main__:demo_analyze_opportunity:113 -   💰 Buy Price: $85.00
+2025-10-26 14:37:13.715 | INFO     | __main__:demo_analyze_opportunity:114 -   📈 Sell Price: $159.99
+2025-10-26 14:37:13.715 | INFO     | __main__:demo_analyze_opportunity:115 -   💵 Estimated Profit: $47.49
+2025-10-26 14:37:13.715 | INFO     | __main__:demo_analyze_opportunity:116 -   📊 Profit Margin: 29.7%
+2025-10-26 14:37:13.715 | INFO     | __main__:demo_analyze_opportunity:117 -   🏪 Source: Facebook Marketplace
+2025-10-26 14:37:13.715 | INFO     | __main__:demo_analyze_opportunity:118 -   ⭐ Seller Rating: 4.4/5.0
+2025-10-26 14:37:13.715 | INFO     | __main__:demo_analyze_opportunity:134 -   💬 AI Decision: NEGOTIATE (Confidence: 85%)
+2025-10-26 14:37:13.715 | INFO     | __main__:demo_analyze_opportunity:135 -   📝 AI Message: 'Hi! Interested in your PS5 Games Bundle - Sealed...
+2025-10-26 14:37:13.716 | INFO     | __main__:demo_analyze_opportunity:136 -              Would you take $72.25? I can pick up today!'
+2025-10-26 14:37:13.716 | INFO     | __main__:demo_analyze_opportunity:142 -   ✅ Seller accepted $72.25!
+2025-10-26 14:37:13.716 | INFO     | __main__:demo_purchase:154 -   💳 Processing purchase...
+2025-10-26 14:37:14.717 | INFO     | __main__:demo_purchase:156 -   ✅ Purchase completed: $72.25
+2025-10-26 14:37:15.219 | INFO     | __main__:demo_purchase:163 -   📝 Creating Amazon listing...
+2025-10-26 14:37:16.220 | INFO     | __main__:demo_purchase:165 -   ✅ Listed on Amazon FBA: $159.99
+2025-10-26 14:37:16.220 | INFO     | __main__:demo_purchase:166 -   🎯 Expected profit when sold: $60.24
+2025-10-26 14:37:16.220 | INFO     | __main__:demo_analyze_opportunity:109 - 
+🤖 Analyzing: Pokemon Legends Arceus - New
+2025-10-26 14:37:16.722 | INFO     | __main__:demo_analyze_opportunity:113 -   💰 Buy Price: $32.00
+2025-10-26 14:37:16.722 | INFO     | __main__:demo_analyze_opportunity:114 -   📈 Sell Price: $54.99
+2025-10-26 14:37:16.722 | INFO     | __main__:demo_analyze_opportunity:115 -   💵 Estimated Profit: $11.24
+2025-10-26 14:37:16.722 | INFO     | __main__:demo_analyze_opportunity:116 -   📊 Profit Margin: 20.4%
+2025-10-26 14:37:16.722 | INFO     | __main__:demo_analyze_opportunity:117 -   🏪 Source: OfferUp
+2025-10-26 14:37:16.722 | INFO     | __main__:demo_analyze_opportunity:118 -   ⭐ Seller Rating: 4.5/5.0
+2025-10-26 14:37:16.722 | INFO     | __main__:demo_analyze_opportunity:149 -   ⏭️  AI Decision: SKIP (Margin 20.4% below threshold)
+2025-10-26 14:37:16.722 | INFO     | __main__:demo_analyze_opportunity:109 - 
+🤖 Analyzing: PS5 Games Bundle - Sealed
+2025-10-26 14:37:17.223 | INFO     | __main__:demo_analyze_opportunity:113 -   💰 Buy Price: $85.00
+2025-10-26 14:37:17.223 | INFO     | __main__:demo_analyze_opportunity:114 -   📈 Sell Price: $159.99
+2025-10-26 14:37:17.223 | INFO     | __main__:demo_analyze_opportunity:115 -   💵 Estimated Profit: $47.49
+2025-10-26 14:37:17.223 | INFO     | __main__:demo_analyze_opportunity:116 -   📊 Profit Margin: 29.7%
+2025-10-26 14:37:17.223 | INFO     | __main__:demo_analyze_opportunity:117 -   🏪 Source: Craigslist
+2025-10-26 14:37:17.224 | INFO     | __main__:demo_analyze_opportunity:118 -   ⭐ Seller Rating: 4.9/5.0
+2025-10-26 14:37:17.224 | INFO     | __main__:demo_analyze_opportunity:134 -   💬 AI Decision: NEGOTIATE (Confidence: 85%)
+2025-10-26 14:37:17.224 | INFO     | __main__:demo_analyze_opportunity:135 -   📝 AI Message: 'Hi! Interested in your PS5 Games Bundle - Sealed...
+2025-10-26 14:37:17.224 | INFO     | __main__:demo_analyze_opportunity:136 -              Would you take $72.25? I can pick up today!'
+2025-10-26 14:37:17.224 | INFO     | __main__:demo_analyze_opportunity:142 -   ✅ Seller accepted $72.25!
+2025-10-26 14:37:17.224 | INFO     | __main__:demo_purchase:154 -   💳 Processing purchase...
+2025-10-26 14:37:18.226 | INFO     | __main__:demo_purchase:156 -   ✅ Purchase completed: $72.25
+2025-10-26 14:37:18.727 | INFO     | __main__:demo_purchase:163 -   📝 Creating Amazon listing...
+2025-10-26 14:37:19.729 | INFO     | __main__:demo_purchase:165 -   ✅ Listed on Amazon FBA: $159.99
+2025-10-26 14:37:19.729 | INFO     | __main__:demo_purchase:166 -   🎯 Expected profit when sold: $60.24
+2025-10-26 14:37:19.729 | INFO     | __main__:demo_analyze_opportunity:109 - 
+🤖 Analyzing: Nintendo Switch OLED - Like New
+2025-10-26 14:37:20.230 | INFO     | __main__:demo_analyze_opportunity:113 -   💰 Buy Price: $220.00
+2025-10-26 14:37:20.231 | INFO     | __main__:demo_analyze_opportunity:114 -   📈 Sell Price: $349.99
+2025-10-26 14:37:20.231 | INFO     | __main__:demo_analyze_opportunity:115 -   💵 Estimated Profit: $73.99
+2025-10-26 14:37:20.231 | INFO     | __main__:demo_analyze_opportunity:116 -   📊 Profit Margin: 21.1%
+2025-10-26 14:37:20.231 | INFO     | __main__:demo_analyze_opportunity:117 -   🏪 Source: OfferUp
+2025-10-26 14:37:20.231 | INFO     | __main__:demo_analyze_opportunity:118 -   ⭐ Seller Rating: 4.1/5.0
+2025-10-26 14:37:20.232 | INFO     | __main__:demo_analyze_opportunity:134 -   💬 AI Decision: NEGOTIATE (Confidence: 85%)
+2025-10-26 14:37:20.232 | INFO     | __main__:demo_analyze_opportunity:135 -   📝 AI Message: 'Hi! Interested in your Nintendo Switch OLED - Like Ne...
+2025-10-26 14:37:20.232 | INFO     | __main__:demo_analyze_opportunity:136 -              Would you take $187.00? I can pick up today!'
+2025-10-26 14:37:20.232 | INFO     | __main__:demo_analyze_opportunity:147 -   ❌ Seller declined - moving to next opportunity
+2025-10-26 14:37:20.232 | INFO     | __main__:demo_analyze_opportunity:109 - 
+🤖 Analyzing: PS5 Games Bundle - Sealed
+2025-10-26 14:37:20.733 | INFO     | __main__:demo_analyze_opportunity:113 -   💰 Buy Price: $85.00
+2025-10-26 14:37:20.733 | INFO     | __main__:demo_analyze_opportunity:114 -   📈 Sell Price: $159.99
+2025-10-26 14:37:20.733 | INFO     | __main__:demo_analyze_opportunity:115 -   💵 Estimated Profit: $47.49
+2025-10-26 14:37:20.733 | INFO     | __main__:demo_analyze_opportunity:116 -   📊 Profit Margin: 29.7%
+2025-10-26 14:37:20.733 | INFO     | __main__:demo_analyze_opportunity:117 -   🏪 Source: Facebook Marketplace
+2025-10-26 14:37:20.733 | INFO     | __main__:demo_analyze_opportunity:118 -   ⭐ Seller Rating: 4.4/5.0
+2025-10-26 14:37:20.733 | INFO     | __main__:demo_analyze_opportunity:134 -   💬 AI Decision: NEGOTIATE (Confidence: 85%)
+2025-10-26 14:37:20.733 | INFO     | __main__:demo_analyze_opportunity:135 -   📝 AI Message: 'Hi! Interested in your PS5 Games Bundle - Sealed...
+2025-10-26 14:37:20.733 | INFO     | __main__:demo_analyze_opportunity:136 -              Would you take $72.25? I can pick up today!'
+2025-10-26 14:37:20.733 | INFO     | __main__:demo_analyze_opportunity:142 -   ✅ Seller accepted $72.25!
+2025-10-26 14:37:20.733 | INFO     | __main__:demo_purchase:154 -   💳 Processing purchase...
+2025-10-26 14:37:21.735 | INFO     | __main__:demo_purchase:156 -   ✅ Purchase completed: $72.25
+2025-10-26 14:37:22.236 | INFO     | __main__:demo_purchase:163 -   📝 Creating Amazon listing...
+2025-10-26 14:37:23.236 | INFO     | __main__:demo_purchase:165 -   ✅ Listed on Amazon FBA: $159.99
+2025-10-26 14:37:23.237 | INFO     | __main__:demo_purchase:166 -   🎯 Expected profit when sold: $60.24
+2025-10-26 14:37:23.237 | INFO     | __main__:demo_analyze_opportunity:109 - 
+🤖 Analyzing: Pokemon Legends Arceus - New
+2025-10-26 14:37:23.738 | INFO     | __main__:demo_analyze_opportunity:113 -   💰 Buy Price: $32.00
+2025-10-26 14:37:23.739 | INFO     | __main__:demo_analyze_opportunity:114 -   📈 Sell Price: $54.99
+2025-10-26 14:37:23.739 | INFO     | __main__:demo_analyze_opportunity:115 -   💵 Estimated Profit: $11.24
+2025-10-26 14:37:23.739 | INFO     | __main__:demo_analyze_opportunity:116 -   📊 Profit Margin: 20.4%
+2025-10-26 14:37:23.739 | INFO     | __main__:demo_analyze_opportunity:117 -   🏪 Source: OfferUp
+2025-10-26 14:37:23.739 | INFO     | __main__:demo_analyze_opportunity:118 -   ⭐ Seller Rating: 5.0/5.0
+2025-10-26 14:37:23.739 | INFO     | __main__:demo_analyze_opportunity:149 -   ⏭️  AI Decision: SKIP (Margin 20.4% below threshold)
+2025-10-26 14:37:23.739 | INFO     | __main__:demo_workflow:90 -   📊 Scanning trading_cards...
+2025-10-26 14:37:24.740 | INFO     | __main__:demo_analyze_opportunity:109 - 
+🤖 Analyzing: Pokemon Charizard PSA 9
+2025-10-26 14:37:25.242 | INFO     | __main__:demo_analyze_opportunity:113 -   💰 Buy Price: $280.00
+2025-10-26 14:37:25.242 | INFO     | __main__:demo_analyze_opportunity:114 -   📈 Sell Price: $520.00
+2025-10-26 14:37:25.242 | INFO     | __main__:demo_analyze_opportunity:115 -   💵 Estimated Profit: $158.50
+2025-10-26 14:37:25.243 | INFO     | __main__:demo_analyze_opportunity:116 -   📊 Profit Margin: 30.5%
+2025-10-26 14:37:25.243 | INFO     | __main__:demo_analyze_opportunity:117 -   🏪 Source: Craigslist
+2025-10-26 14:37:25.243 | INFO     | __main__:demo_analyze_opportunity:118 -   ⭐ Seller Rating: 4.7/5.0
+2025-10-26 14:37:25.243 | INFO     | __main__:demo_analyze_opportunity:124 -   ✅ AI Decision: PURCHASE (Confidence: 92%)
+2025-10-26 14:37:25.243 | INFO     | __main__:demo_analyze_opportunity:125 -   🎯 Action: Execute purchase immediately!
+2025-10-26 14:37:25.243 | INFO     | __main__:demo_purchase:154 -   💳 Processing purchase...
+2025-10-26 14:37:26.247 | INFO     | __main__:demo_purchase:156 -   ✅ Purchase completed: $280.00
+2025-10-26 14:37:26.749 | INFO     | __main__:demo_purchase:163 -   📝 Creating Amazon listing...
+2025-10-26 14:37:27.750 | INFO     | __main__:demo_purchase:165 -   ✅ Listed on Amazon FBA: $520.00
+2025-10-26 14:37:27.750 | INFO     | __main__:demo_purchase:166 -   🎯 Expected profit when sold: $158.50
+2025-10-26 14:37:27.750 | INFO     | __main__:demo_analyze_opportunity:109 - 
+🤖 Analyzing: Pokemon Charizard PSA 9
+2025-10-26 14:37:28.252 | INFO     | __main__:demo_analyze_opportunity:113 -   💰 Buy Price: $280.00
+2025-10-26 14:37:28.252 | INFO     | __main__:demo_analyze_opportunity:114 -   📈 Sell Price: $520.00
+2025-10-26 14:37:28.252 | INFO     | __main__:demo_analyze_opportunity:115 -   💵 Estimated Profit: $158.50
+2025-10-26 14:37:28.253 | INFO     | __main__:demo_analyze_opportunity:116 -   📊 Profit Margin: 30.5%
+2025-10-26 14:37:28.254 | INFO     | __main__:demo_analyze_opportunity:117 -   🏪 Source: Craigslist
+2025-10-26 14:37:28.254 | INFO     | __main__:demo_analyze_opportunity:118 -   ⭐ Seller Rating: 4.8/5.0
+2025-10-26 14:37:28.254 | INFO     | __main__:demo_analyze_opportunity:124 -   ✅ AI Decision: PURCHASE (Confidence: 92%)
+2025-10-26 14:37:28.254 | INFO     | __main__:demo_analyze_opportunity:125 -   🎯 Action: Execute purchase immediately!
+2025-10-26 14:37:28.254 | INFO     | __main__:demo_purchase:154 -   💳 Processing purchase...
+2025-10-26 14:37:29.256 | INFO     | __main__:demo_purchase:156 -   ✅ Purchase completed: $280.00
+2025-10-26 14:37:29.757 | INFO     | __main__:demo_purchase:163 -   📝 Creating Amazon listing...
+2025-10-26 14:37:30.758 | INFO     | __main__:demo_purchase:165 -   ✅ Listed on Amazon FBA: $520.00
+2025-10-26 14:37:30.759 | INFO     | __main__:demo_purchase:166 -   🎯 Expected profit when sold: $158.50
+2025-10-26 14:37:30.759 | INFO     | __main__:demo_analyze_opportunity:109 - 
+🤖 Analyzing: Pokemon Booster Box Sealed
+2025-10-26 14:37:31.260 | INFO     | __main__:demo_analyze_opportunity:113 -   💰 Buy Price: $125.00
+2025-10-26 14:37:31.260 | INFO     | __main__:demo_analyze_opportunity:114 -   📈 Sell Price: $245.00
+2025-10-26 14:37:31.260 | INFO     | __main__:demo_analyze_opportunity:115 -   💵 Estimated Profit: $79.75
+2025-10-26 14:37:31.260 | INFO     | __main__:demo_analyze_opportunity:116 -   📊 Profit Margin: 32.6%
+2025-10-26 14:37:31.260 | INFO     | __main__:demo_analyze_opportunity:117 -   🏪 Source: Craigslist
+2025-10-26 14:37:31.260 | INFO     | __main__:demo_analyze_opportunity:118 -   ⭐ Seller Rating: 4.2/5.0
+2025-10-26 14:37:31.260 | INFO     | __main__:demo_analyze_opportunity:124 -   ✅ AI Decision: PURCHASE (Confidence: 92%)
+2025-10-26 14:37:31.260 | INFO     | __main__:demo_analyze_opportunity:125 -   🎯 Action: Execute purchase immediately!
+2025-10-26 14:37:31.260 | INFO     | __main__:demo_purchase:154 -   💳 Processing purchase...
+2025-10-26 14:37:32.261 | INFO     | __main__:demo_purchase:156 -   ✅ Purchase completed: $125.00
+2025-10-26 14:37:32.762 | INFO     | __main__:demo_purchase:163 -   📝 Creating Amazon listing...
+2025-10-26 14:37:33.764 | INFO     | __main__:demo_purchase:165 -   ✅ Listed on Amazon FBA: $245.00
+2025-10-26 14:37:33.764 | INFO     | __main__:demo_purchase:166 -   🎯 Expected profit when sold: $79.75
+2025-10-26 14:37:33.764 | INFO     | __main__:demo_analyze_opportunity:109 - 
+🤖 Analyzing: Magic The Gathering Collection
+2025-10-26 14:37:34.265 | INFO     | __main__:demo_analyze_opportunity:113 -   💰 Buy Price: $89.00
+2025-10-26 14:37:34.266 | INFO     | __main__:demo_analyze_opportunity:114 -   📈 Sell Price: $185.00
+2025-10-26 14:37:34.266 | INFO     | __main__:demo_analyze_opportunity:115 -   💵 Estimated Profit: $64.75
+2025-10-26 14:37:34.266 | INFO     | __main__:demo_analyze_opportunity:116 -   📊 Profit Margin: 35.0%
+2025-10-26 14:37:34.266 | INFO     | __main__:demo_analyze_opportunity:117 -   🏪 Source: OfferUp
+2025-10-26 14:37:34.266 | INFO     | __main__:demo_analyze_opportunity:118 -   ⭐ Seller Rating: 4.4/5.0
+2025-10-26 14:37:34.266 | INFO     | __main__:demo_analyze_opportunity:124 -   ✅ AI Decision: PURCHASE (Confidence: 92%)
+2025-10-26 14:37:34.266 | INFO     | __main__:demo_analyze_opportunity:125 -   🎯 Action: Execute purchase immediately!
+2025-10-26 14:37:34.266 | INFO     | __main__:demo_purchase:154 -   💳 Processing purchase...
+2025-10-26 14:37:35.267 | INFO     | __main__:demo_purchase:156 -   ✅ Purchase completed: $89.00
+2025-10-26 14:37:35.768 | INFO     | __main__:demo_purchase:163 -   📝 Creating Amazon listing...
+2025-10-26 14:37:36.769 | INFO     | __main__:demo_purchase:165 -   ✅ Listed on Amazon FBA: $185.00
+2025-10-26 14:37:36.770 | INFO     | __main__:demo_purchase:166 -   🎯 Expected profit when sold: $64.75
+2025-10-26 14:37:36.770 | INFO     | __main__:demo_workflow:100 - 
+✅ Scanning complete! Found 14 opportunities
+2025-10-26 14:37:38.771 | INFO     | __main__:print_stats:171 - 
+================================================================================
+2025-10-26 14:37:38.772 | INFO     | __main__:print_stats:172 - 📊 DEMO SESSION STATISTICS
+2025-10-26 14:37:38.772 | INFO     | __main__:print_stats:173 - ================================================================================
+2025-10-26 14:37:38.772 | INFO     | __main__:print_stats:174 - 🔍 Opportunities Found:     14
+2025-10-26 14:37:38.772 | INFO     | __main__:print_stats:175 - 💬 Negotiations Started:    4
+2025-10-26 14:37:38.772 | INFO     | __main__:print_stats:176 - ✅ Purchases Completed:     11
+2025-10-26 14:37:38.772 | INFO     | __main__:print_stats:177 - 💰 Total Profit Expected:   $827.71
+2025-10-26 14:37:38.772 | INFO     | __main__:print_stats:181 - 📈 Average Profit/Item:     $75.25
+2025-10-26 14:37:38.773 | INFO     | __main__:print_stats:183 - ================================================================================
+2025-10-26 14:37:38.773 | INFO     | __main__:print_stats:184 - 
+✨ This is a DEMO showing system capabilities
+2025-10-26 14:37:38.773 | INFO     | __main__:print_stats:185 - To run in PRODUCTION mode:
+2025-10-26 14:37:38.773 | INFO     | __main__:print_stats:186 -   1. Add your API keys to .env file
+2025-10-26 14:37:38.775 | INFO     | __main__:print_stats:187 -   2. Run: python main.py
+2025-10-26 14:37:38.775 | INFO     | __main__:print_stats:188 - 
+To see the dashboard:
+2025-10-26 14:37:38.775 | INFO     | __main__:print_stats:189 -   docker-compose up -d
+2025-10-26 14:37:38.775 | INFO     | __main__:print_stats:190 -   Open: http://localhost:3000
+2025-10-26 14:37:38.775 | INFO     | __main__:print_stats:191 - ================================================================================

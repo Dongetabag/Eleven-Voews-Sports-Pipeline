@@ -1,0 +1,50 @@
+# Vercel Production Environment Variables
+# Copy and paste these into Vercel → Settings → Environment Variables
+# Make sure to select "Production" environment for each!
+
+# ==========================================
+# CLERK AUTHENTICATION (PRODUCTION)
+# ==========================================
+VITE_CLERK_PUBLISHABLE_KEY=pk_live_LmNsZXJrLmFjY291bnRzLmRldiQ
+
+# ==========================================
+# SUPABASE DATABASE
+# ==========================================
+VITE_SUPABASE_URL=https://fqsuryapcypscpysaemh.supabase.co
+VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZxc3VyeWFwY3lwc2NweXNhZW1oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAwNzU1MjksImV4cCI6MjA3NTY1MTUyOX0.ErtYzn5jZVdE6ab4zU_lLZy30wb6xWgWYMrgIOE0p2c
+
+# ==========================================
+# STRIPE (PRODUCTION - UPDATE WITH YOUR KEYS)
+# ==========================================
+VITE_STRIPE_PUBLISHABLE_KEY=pk_live_YOUR_STRIPE_LIVE_KEY_HERE
+
+# ==========================================
+# BACKEND API URL
+# ==========================================
+VITE_API_URL=https://your-backend.railway.app
+
+# ==========================================
+# GEMINI AI API KEY
+# ==========================================
+VITE_GEMINI_API_KEY=YOUR_GEMINI_API_KEY_HERE
+
+# ==========================================
+# INSTRUCTIONS
+# ==========================================
+# 1. Copy each variable above
+# 2. Go to Vercel → Your Project → Settings → Environment Variables
+# 3. Click "Add New"
+# 4. Paste Name and Value
+# 5. Select "Production" environment
+# 6. Click "Save"
+# 7. Repeat for all variables
+# 8. After all variables are added, redeploy your app
+
+# ==========================================
+# NOTES
+# ==========================================
+# - Clerk key is already updated with production key
+# - Update Stripe keys with your live keys when ready
+# - Update VITE_API_URL with your Railway backend URL
+# - Update VITE_GEMINI_API_KEY with your actual API key
+
