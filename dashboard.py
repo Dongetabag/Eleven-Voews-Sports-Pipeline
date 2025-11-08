@@ -115,7 +115,7 @@ DASHBOARD_HTML = """
             line-height: 1.6;
             min-height: 100vh;
             position: relative;
-            overflow-x: hidden;
+            overflow-x: auto;
         }
         
         /* Hexagonal Grid Background */
@@ -367,6 +367,12 @@ DASHBOARD_HTML = """
             border-radius: 16px;
             border: 1px solid var(--border);
             overflow: hidden;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .leads-table table {
+            min-width: 860px;
         }
         
         table {
@@ -862,6 +868,117 @@ DASHBOARD_HTML = """
             background: rgba(244, 67, 54, 0.1);
             border-color: #F44336;
         }
+        
+        @media (max-width: 1024px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 16px;
+            }
+            
+            .filters {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                font-size: 15px;
+            }
+            
+            .hex-background {
+                display: none;
+            }
+            
+            .container {
+                padding: 18px;
+            }
+            
+            header {
+                padding: 20px;
+            }
+            
+            .logo-section {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            
+            .filters {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+            }
+            
+            .filters button,
+            .filters select,
+            .filters input,
+            .filters .new-search-btn,
+            .filters .nav-link-btn {
+                width: 100%;
+            }
+            
+            .search-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .search-actions button {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 16px;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .leads-table table {
+                min-width: 640px;
+            }
+            
+            .stat-card {
+                padding: 22px;
+            }
+            
+            .search-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 26px;
+            }
+            
+            .filters {
+                padding: 16px;
+            }
+            
+            .filters button,
+            .search-btn {
+                font-size: 14px;
+                padding: 12px 18px;
+            }
+            
+            .stat-value {
+                font-size: 32px;
+            }
+            
+            .modal-content {
+                padding: 28px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -963,20 +1080,20 @@ DASHBOARD_HTML = """
                 <div class="filter-metrics">
                     <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 12px; color: var(--text-primary);">🎯 Filter Metrics</h3>
                     <div class="metrics-grid">
-                    <div class="metric-field">
+                        <div class="metric-field">
                         <label>⭐ Min Reputation</label>
                             <input type="number" id="search-min-rating" value="4.0" min="1.0" max="5.0" step="0.1">
                         </div>
-                    <div class="metric-field">
+                        <div class="metric-field">
                         <label>💬 Min Public Signals</label>
                             <input type="number" id="search-min-reviews" value="10" min="0" max="1000" step="5">
                         </div>
-                    <div class="metric-field">
+                        <div class="metric-field">
                         <label>🎯 Min Fit Score</label>
                             <input type="number" id="search-min-score" value="60" min="0" max="100" step="5">
                         </div>
                         <div class="metric-field">
-                        <label>✅ Auto-Qualify</label>
+                            <label>✅ Auto-Qualify</label>
                             <input type="checkbox" id="search-auto-qualify" checked>
                         </div>
                     </div>
@@ -1168,7 +1285,6 @@ DASHBOARD_HTML = """
                     
                     modal.style.display = 'flex';
                 });
-        }
         
         function closeModal() {
             document.getElementById('lead-modal').style.display = 'none';
