@@ -6,12 +6,17 @@ Flask dashboard for the Eleven Views Opportunity Engine
 from flask import Flask, render_template_string, jsonify, request, send_file
 from database import Database
 from ai_personalizer import AIPersonalizer
-from utils.logger import get_logger
 import json
 from datetime import datetime
 import csv
 import io
 import os
+
+# Use serverless-compatible logger for Vercel
+try:
+    from utils.logger_vercel import get_logger
+except ImportError:
+    from utils.logger import get_logger
 
 # Optional imports for enhanced features
 try:
