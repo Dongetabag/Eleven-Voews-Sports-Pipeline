@@ -6,6 +6,7 @@ SQLite-based storage with easy PostgreSQL migration path
 
 import sqlite3
 import json
+import os
 from datetime import datetime
 from typing import Dict, List, Optional
 from pathlib import Path
@@ -13,13 +14,18 @@ from pathlib import Path
 class Database:
     """SQLite database manager for leads"""
     
-    def __init__(self, db_path: str = "data/leads.db"):
+    def __init__(self, db_path: str = None):
         """Initialize database connection"""
+        # Use /tmp for Vercel serverless (ephemeral but writable)
+        if db_path is None:
+            db_path = os.getenv('DATABASE_PATH', '/tmp/leads.db')
+
         self.db_path = db_path
-        
-        # Create data directory if it doesn't exist
-        Path("data").mkdir(exist_ok=True)
-        
+
+        # Create data directory if it doesn't exist (and if not in /tmp)
+        if not self.db_path.startswith('/tmp'):
+            Path(os.path.dirname(self.db_path) or 'data').mkdir(exist_ok=True)
+
         # Initialize database schema
         self._init_schema()
     
